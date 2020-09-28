@@ -20,6 +20,11 @@ const keyOpenbakStyles = {
   width: 55,
 };
 
+const MainitleStyle = {
+  fontSize: 22,
+  fontWeight: "bold",
+};
+
 const MainWizardPages = () => {
   return (
     <div>
@@ -39,6 +44,11 @@ const MainWizardPages = () => {
         </Col>
       </Row>
 
+      <Row>
+        <Col>
+          <div css={MainitleStyle}>Crea tu password manager</div>
+        </Col>
+      </Row>
       <Fade bottom>
         <Switch>
           <Route exact path="/" component={Welcome} />
