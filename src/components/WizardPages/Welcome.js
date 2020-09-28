@@ -1,49 +1,92 @@
 // eslint-disable-next-line
 import React from "react";
-import { Row, Col } from "reactstrap";
+import { Row, Col, Label, Input } from "reactstrap";
+import head from "./../../assets/img/head.png";
+import security from "./../../assets/img/security.png";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 
-/* const borde = {
+const borde = {
   borderStyle: "solid",
-}; */
+};
+
+const MainitleStyle = {
+  fontSize: 22,
+  fontWeight: "bold",
+};
 
 const titleStyle = {
   fontSize: 20,
   fontWeight: "bold",
 };
 
+const optionStyles = {
+  marginTop: 30,
+};
+
+const parraphDescriptionStyles = {
+  textAlign: "center",
+};
+
+const politicsAccept = {
+  paddingLeft: 18,
+  marginTop: 50,
+};
+
 const Welcome = () => {
   return (
     <div>
       <Row>
-        <Col>Guarda aqui todas tus contraseñas...</Col>
-        <Col>Guarda aqui todas tus contraseñas...</Col>
-      </Row>
-      <Row>
         <Col>
-          <div css={titleStyle}>Como funciona</div>
-          In proident id aliqua magna pariatur sit ea qui eu proident. Mollit
-          non elit nulla elit pariatur ut non minim. Tempor esse velit proident
-          incididunt. Nisi occaecat ullamco labore elit proident ex enim
-          occaecat non velit ipsum. Veniam tempor qui veniam exercitation aute
-          et tempor nisi excepteur officia cupidatat elit aliqua ea. Nisi est
-          fugiat ut ipsum dolor id. In dolore pariatur quis cillum do consequat.
-          Mollit aliquip aute aliquip veniam pariatur. Do laboris ipsum ut duis
-          laboris exercitation officia laboris velit.
+          <div css={MainitleStyle}>Crea tu password manager</div>
         </Col>
       </Row>
-      <Row>
+      <Row css={optionStyles}>
+        <Col>
+          <Row className="justify-content-center">
+            <img src={head} alt={"openbank-head"} />
+          </Row>
+          <Row className="justify-content-center">
+            <Col xs={9} css={parraphDescriptionStyles}>
+              Guarda aqui todas tus contraseñas, datos o cualquier información,
+              olvida las notas de papel y las aplicaiones de papel.
+            </Col>
+          </Row>
+        </Col>
+        <Col>
+          <Row className="justify-content-center">
+            <img src={security} alt={"openbank-security"} />
+          </Row>
+          <Row className="justify-content-center">
+            <Col xs={9} css={parraphDescriptionStyles}>
+              Guarda aqui todas tus contraseñas, datos o cualquier información,
+              olvida las notas de papel y las aplicaiones de papel.
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+      <Row css={optionStyles}>
+        <Col>
+          <div css={titleStyle}>Como funciona</div>
+          En primer lugar, debes crear una contraseña diferente para sus
+          pertenecias electrónicas. No podrás recuperar tu contraseña, así que
+          recuerdala bien.
+        </Col>
+      </Row>
+      <Row css={optionStyles}>
         <Col>
           <div css={titleStyle}>Qué datos puedes guardar</div>
-          In proident id aliqua magna pariatur sit ea qui eu proident. Mollit
-          non elit nulla elit pariatur ut non minim. Tempor esse velit proident
-          incididunt. Nisi occaecat ullamco labore elit proident ex enim
-          occaecat non velit ipsum. Veniam tempor qui veniam exercitation aute
-          et tempor nisi excepteur officia cupidatat elit aliqua ea. Nisi est
-          fugiat ut ipsum dolor id. In dolore pariatur quis cillum do consequat.
-          Mollit aliquip aute aliquip veniam pariatur. Do laboris ipsum ut duis
-          laboris exercitation officia laboris velit.
+          Por ejemplo, el número de tu tarjeta, el PIN y el PUK de tu teléfono
+          móvil, el número de serie de alguno de tus dispositivos o cualquier
+          información que necesites tener en lugar seguro.
+        </Col>
+      </Row>
+      <Row css={politicsAccept}>
+        <Col>
+          <Label check>
+            <Input type="checkbox" /> Tiene mayoría de edad y acepta que
+            tratemos sus datos según la politica de protección de datos?
+          </Label>
         </Col>
       </Row>
     </div>

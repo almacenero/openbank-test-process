@@ -22,7 +22,7 @@ const MainWizardPages = () => {
     <div>
       <Row>
         <Col>
-          <div css={titleStyle}>Crea tu password manager</div>
+          <div css={titleStyle}>Cuenta Corriente OpenClose</div>
         </Col>
         <Col>
           <Row className="justify-content-end">
