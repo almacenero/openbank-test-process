@@ -86,7 +86,7 @@ const Welcome = () => {
       <Row css={politicsAccept}>
         <Col>
           <Label check>
-            <Input type="checkbox" checked={checked} onClick={handleChecked} />{" "}
+            <Input type="checkbox" checked={checked} onChange={handleChecked} />{" "}
             Tiene mayoría de edad y acepta que tratemos sus datos según la
             politica de protección de datos?
           </Label>
