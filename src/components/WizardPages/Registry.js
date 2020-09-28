@@ -35,7 +35,6 @@ const Registry = () => {
         <Col>
           <div css={textStyles}>Crea tu contraseña maestra</div>
           <Form.Item
-            //label="Contraseña"
             name="password"
             rules={[
               {
@@ -54,7 +53,6 @@ const Registry = () => {
         <Col>
           <div css={textStyles}>Repite tu contraseña maestra</div>
           <Form.Item
-            //label="Contraseña"
             name="password"
             rules={[
               {
