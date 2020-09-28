@@ -13,7 +13,12 @@ const { Step } = Steps;
 
 const MainSteps = () => {
   return (
-    <Steps direction="vertical" current={0}>
+    <Steps
+      direction="vertical"
+      current={0}
+      size="default"
+      css={{ height: "100%" }}
+    >
       <Step title="Bienvenida" />
       <Step title="Loggin" />
       <Step title="Finalizado" />
