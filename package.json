@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.0.35",
+    "antd": "^4.6.6",
     "bootstrap": "^4.5.2",
     "i18next": "^17.0.16",
     "i18next-browser-languagedetector": "^3.0.3",
