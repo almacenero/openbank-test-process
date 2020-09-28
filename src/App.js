@@ -16,12 +16,12 @@ const containerStyles = {
 
 const App = () => {
   return (
-    <Container css={(borde, containerStyles)}>
+    <Container css={containerStyles}>
       <Row>
-        <Col css={borde}>
+        <Col>
           <MainSteps />
         </Col>
-        <Col css={borde} xs={10}>
+        <Col xs={10}>
           <MainWizardPages />
         </Col>
       </Row>
