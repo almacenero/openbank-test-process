@@ -21,7 +21,7 @@ const MainSteps = () => {
       size="default"
       css={{ height: "100%" }}
     >
-      <Step title="Bienvenida" />
+      <Step title="Bienvenid@" />
       <Step title="Loggin" />
       <Step title="Finalizado" />
     </Steps>

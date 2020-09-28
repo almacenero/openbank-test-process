@@ -17,16 +17,19 @@ const titleStyle = {
 };
 
 const optionStyles = {
-  marginTop: 30,
+  marginTop: 20,
+  fontSize: 15,
 };
 
 const parraphDescriptionStyles = {
   textAlign: "center",
+  fontSize: 15,
 };
 
 const politicsAccept = {
   paddingLeft: 18,
-  marginTop: 50,
+  marginTop: 20,
+  fontSize: 15,
 };
 
 const Welcome = () => {

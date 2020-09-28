@@ -13,6 +13,10 @@ const firstParraphStyle = {
   marginTop: 30,
 };
 
+const textStyles = {
+  fontSize: 15,
+};
+
 const Registry = () => {
   const { handleCurrent, current } = useContext(StepsContext);
   useEffect(() => {
@@ -22,14 +26,14 @@ const Registry = () => {
   });
   return (
     <div>
-      <Row css={firstParraphStyle}>
+      <Row css={(firstParraphStyle, textStyles)}>
         En primer lugar, debes crear una contraseña diferente para sus
         pertenencias electrónicas. No podrás recuperar tu contraseña, así que
         recuérdala bien
       </Row>
       <Row css={firstParraphStyle}>
         <Col>
-          <div>Crea tu contraseña maestra</div>
+          <div css={textStyles}>Crea tu contraseña maestra</div>
           <Form.Item
             //label="Contraseña"
             name="password"
@@ -48,7 +52,7 @@ const Registry = () => {
           </Form.Item>
         </Col>
         <Col>
-          <div>Repite tu contraseña maestra</div>
+          <div css={textStyles}>Repite tu contraseña maestra</div>
           <Form.Item
             //label="Contraseña"
             name="password"
@@ -68,11 +72,13 @@ const Registry = () => {
           </Form.Item>
         </Col>
       </Row>
-      <Row>
+      <Row css={textStyles}>
         También puedes crear una pista que te ayude a recordar tu contraseña
         maestra.
       </Row>
-      <Row>Crea tu pista recordar tu contraseña (opcional)</Row>
+      <Row css={textStyles}>
+        Crea tu pista recordar tu contraseña (opcional)
+      </Row>
       <Row>
         <Input placeholder="Introduce tu pista" />
       </Row>
