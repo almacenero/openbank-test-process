@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col, Label, Input } from "reactstrap";
 import head from "./../../assets/img/head.png";
 import security from "./../../assets/img/security.png";
@@ -34,6 +34,10 @@ const politicsAccept = {
 };
 
 const Welcome = () => {
+  const [checked, setChecked] = useState(true);
+  const handleChecked = () => {
+    setChecked(!checked);
+  };
   return (
     <div>
       <Row>
@@ -84,8 +88,9 @@ const Welcome = () => {
       <Row css={politicsAccept}>
         <Col>
           <Label check>
-            <Input type="checkbox" /> Tiene mayoría de edad y acepta que
-            tratemos sus datos según la politica de protección de datos?
+            <Input type="checkbox" checked={checked} onClick={handleChecked} />{" "}
+            Tiene mayoría de edad y acepta que tratemos sus datos según la
+            politica de protección de datos?
           </Label>
         </Col>
       </Row>
