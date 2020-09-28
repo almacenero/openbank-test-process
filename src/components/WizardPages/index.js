@@ -1,6 +1,7 @@
 // eslint-disable-next-line
 import React from "react";
 import Welcome from "./Welcome";
+import NavButtons from "./../NavButtons/index";
 import logo_openbank from "../../assets/img/logo_openbank.png";
 import key_openbank from "../../assets/img/key_openbank.png";
 import { Row, Col } from "reactstrap";
@@ -39,6 +40,9 @@ const MainWizardPages = () => {
       <Fade bottom>
         <Welcome />
       </Fade>
+      <Row>
+        <NavButtons />
+      </Row>
     </div>
   );
 };

@@ -6,9 +6,9 @@ import MainSteps from "./components/Steps/index";
 import MainWizardPages from "./components/WizardPages/index";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-const borde = {
+/* const borde = {
   borderStyle: "solid",
-};
+}; */
 
 const containerStyles = {
   marginTop: 20,
@@ -16,12 +16,12 @@ const containerStyles = {
 
 const App = () => {
   return (
-    <Container css={(borde, containerStyles)}>
+    <Container css={containerStyles}>
       <Row>
-        <Col css={borde}>
+        <Col>
           <MainSteps />
         </Col>
-        <Col css={borde} xs={10}>
+        <Col xs={10}>
           <MainWizardPages />
         </Col>
       </Row>
