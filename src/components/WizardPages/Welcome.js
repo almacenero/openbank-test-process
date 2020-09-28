@@ -5,10 +5,10 @@ import head from "./../../assets/img/head.png";
 import security from "./../../assets/img/security.png";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-
+/* 
 const borde = {
   borderStyle: "solid",
-};
+}; */
 
 const MainitleStyle = {
   fontSize: 22,
