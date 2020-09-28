@@ -9,7 +9,7 @@ import { jsx } from "@emotion/core";
 }; */
 
 const MainWizardPages = () => {
-  return <div>Paginas para login</div>;
+  return <div>Crea tu password manager</div>;
 };
 
 export default MainWizardPages;
