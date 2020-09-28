@@ -1,6 +1,7 @@
 // eslint-disable-next-line
-import React from "react";
+import React, { useContext } from "react";
 import { Steps } from "antd";
+import { StepsContext } from "./../Context/StepsContext";
 //import { Container, Row } from "reactstrap";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
@@ -12,14 +13,15 @@ import { jsx } from "@emotion/core";
 const { Step } = Steps;
 
 const MainSteps = () => {
+  const { current } = useContext(StepsContext);
   return (
     <Steps
       direction="vertical"
-      current={0}
+      current={current}
       size="default"
       css={{ height: "100%" }}
     >
-      <Step title="Bienvenida" />
+      <Step title="Bienvenid@" />
       <Step title="Loggin" />
       <Step title="Finalizado" />
     </Steps>

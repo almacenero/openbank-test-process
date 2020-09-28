@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Row, Col, Label, Input } from "reactstrap";
 import head from "./../../assets/img/head.png";
 import security from "./../../assets/img/security.png";
@@ -17,16 +17,19 @@ const titleStyle = {
 };
 
 const optionStyles = {
-  marginTop: 30,
+  marginTop: 20,
+  fontSize: 15,
 };
 
 const parraphDescriptionStyles = {
   textAlign: "center",
+  fontSize: 15,
 };
 
 const politicsAccept = {
   paddingLeft: 18,
-  marginTop: 50,
+  marginTop: 20,
+  fontSize: 15,
 };
 
 const Welcome = () => {
