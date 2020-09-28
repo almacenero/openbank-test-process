@@ -1,7 +1,8 @@
 // eslint-disable-next-line
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Row, Col } from "reactstrap";
 import { Form, Input } from "antd";
+import { StepsContext } from "./../Context/StepsContext";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 /* const borde = {
@@ -13,6 +14,12 @@ const firstParraphStyle = {
 };
 
 const Registry = () => {
+  const { handleCurrent, current } = useContext(StepsContext);
+  useEffect(() => {
+    if (current !== 1) {
+      handleCurrent(1);
+    }
+  });
   return (
     <div>
       <Row css={firstParraphStyle}>

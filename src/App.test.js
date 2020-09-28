@@ -3,11 +3,14 @@ import React from "react";
 import App from "./App";
 import { render } from "@testing-library/react";
 import { CheckBoxProvider } from "./components/Context/CheckBoxContext";
+import { StepsProvider } from "./components/Context/StepsContext";
 beforeEach(() => {
   render(
-    <CheckBoxProvider>
-      <App></App>
-    </CheckBoxProvider>
+    <StepsProvider>
+      <CheckBoxProvider>
+        <App></App>
+      </CheckBoxProvider>
+    </StepsProvider>
   );
 });
 it("renders without crashing", () => {

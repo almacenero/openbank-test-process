@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Row, Col, Label, Input } from "reactstrap";
 import head from "./../../assets/img/head.png";
 import security from "./../../assets/img/security.png";

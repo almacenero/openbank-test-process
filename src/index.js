@@ -6,11 +6,14 @@ import * as serviceWorker from "./serviceWorker";
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CheckBoxProvider } from "./components/Context/CheckBoxContext";
+import { StepsProvider } from "./components/Context/StepsContext";
 
 ReactDOM.render(
-  <CheckBoxProvider>
-    <App />
-  </CheckBoxProvider>,
+  <StepsProvider>
+    <CheckBoxProvider>
+      <App />
+    </CheckBoxProvider>
+  </StepsProvider>,
   document.getElementById("root")
 );
 
