@@ -7,9 +7,6 @@ import { Row, Col } from "reactstrap";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 
-/* const borde = {
-  borderStyle: "solid",
-}; */
 const titleStyle = {
   fontSize: 25,
   fontWeight: "bold",
