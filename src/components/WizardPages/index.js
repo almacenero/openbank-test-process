@@ -4,7 +4,7 @@ import Welcome from "./Welcome";
 import NavButtons from "./../NavButtons/index";
 import logo_openbank from "../../assets/img/logo_openbank.png";
 import key_openbank from "../../assets/img/key_openbank.png";
-import { Row, Col, Container } from "reactstrap";
+import { Row, Col } from "reactstrap";
 import Fade from "react-reveal/Fade";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";

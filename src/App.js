@@ -6,9 +6,9 @@ import MainSteps from "./components/Steps/index";
 import MainWizardPages from "./components/WizardPages/index";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-const borde = {
+/* const borde = {
   borderStyle: "solid",
-};
+}; */
 
 const containerStyles = {
   marginTop: 20,

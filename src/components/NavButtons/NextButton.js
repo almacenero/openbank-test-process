@@ -1,6 +1,7 @@
 // eslint-disable-next-line
-import React from "react";
+import React, { useContext } from "react";
 import { Button } from "reactstrap";
+import { CheckBoxContext } from "./../Context/CheckBoxContext";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 
@@ -10,7 +11,12 @@ const buttonStyles = {
 };
 
 const NextButton = () => {
-  return <Button css={buttonStyles}>Siguiente</Button>;
+  const { checked } = useContext(CheckBoxContext);
+  return (
+    <Button css={buttonStyles} hidden={!checked}>
+      Siguiente
+    </Button>
+  );
 };
 
 export default NextButton;
