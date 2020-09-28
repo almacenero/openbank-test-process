@@ -11,11 +11,6 @@ const borde = {
   borderStyle: "solid",
 }; */
 
-const MainitleStyle = {
-  fontSize: 22,
-  fontWeight: "bold",
-};
-
 const titleStyle = {
   fontSize: 20,
   fontWeight: "bold",
@@ -38,11 +33,6 @@ const Welcome = () => {
   const { checked, handleChecked } = useContext(CheckBoxContext);
   return (
     <div>
-      <Row>
-        <Col>
-          <div css={MainitleStyle}>Crea tu password manager</div>
-        </Col>
-      </Row>
       <Row css={optionStyles}>
         <Col>
           <Row className="justify-content-center">
