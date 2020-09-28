@@ -10,14 +10,18 @@ const borde = {
   borderStyle: "solid",
 };
 
+const containerStyles = {
+  marginTop: 20,
+};
+
 const App = () => {
   return (
-    <Container css={borde}>
+    <Container css={(borde, containerStyles)}>
       <Row>
         <Col css={borde}>
           <MainSteps />
         </Col>
-        <Col css={borde}>
+        <Col css={borde} xs={10}>
           <MainWizardPages />
         </Col>
       </Row>

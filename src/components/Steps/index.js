@@ -14,9 +14,9 @@ const { Step } = Steps;
 const MainSteps = () => {
   return (
     <Steps direction="vertical" current={0}>
-      <Step title="Bienvenida" description="Pantalla 1" />
-      <Step title="Loggin" description="Pantalla 1" />
-      <Step title="Finalizado" description="Pantalla 3" />
+      <Step title="Bienvenida" />
+      <Step title="Loggin" />
+      <Step title="Finalizado" />
     </Steps>
   );
 };
