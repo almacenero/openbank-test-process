@@ -1,0 +1,29 @@
+// eslint-disable-next-line
+import React from "react";
+import { Steps } from "antd";
+//import { Container, Row } from "reactstrap";
+/** @jsx jsx */
+import { jsx } from "@emotion/core";
+
+/* const borde = {
+  borderStyle: "solid",
+}; */
+
+const { Step } = Steps;
+
+const MainSteps = () => {
+  return (
+    <Steps
+      direction="vertical"
+      current={0}
+      size="default"
+      css={{ height: "100%" }}
+    >
+      <Step title="Bienvenida" />
+      <Step title="Loggin" />
+      <Step title="Finalizado" />
+    </Steps>
+  );
+};
+
+export default MainSteps;

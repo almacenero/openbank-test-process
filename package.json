@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.0.35",
+    "antd": "^4.6.6",
     "bootstrap": "^4.5.2",
     "i18next": "^17.0.16",
     "i18next-browser-languagedetector": "^3.0.3",
@@ -11,6 +12,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-i18next": "^10.12.5",
+    "react-reveal": "^1.2.2",
     "react-scripts": "3.4.3",
     "reactstrap": "^8.6.0"
   },
