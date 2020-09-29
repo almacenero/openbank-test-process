@@ -1,4 +1,4 @@
-import passwordValidator from "./../helpers/validation";
+import passwordValidator from "./../helpers/PasswordValidation";
 
 it("Should input a password between 8 to 24 characters which contain at least one numeric digit, one uppercase", () => {
   const Correct_password = "8kasSk23";
