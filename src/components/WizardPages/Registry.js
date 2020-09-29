@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import React, { useContext, useEffect, useState } from "react";
 import { Row, Col } from "reactstrap";
-import { Input } from "antd";
+import { Input, Tooltip } from "antd";
 import { StepsContext } from "./../Context/StepsContext";
 import { useTranslation } from "react-i18next";
 import passwordValidator from "./../../helpers/PasswordValidation";
@@ -83,17 +83,19 @@ const Registry = () => {
                 required
               />
             </Col>
-            <Col>
-              {infoIcon && (
-                <Icon size={24} icon={info} css={{ color: "#1890FF" }} />
-              )}
-              {warningIcon && (
-                <Icon size={24} icon={blocked} css={{ color: "red" }} />
-              )}
-              {succesIcon && (
-                <Icon size={24} icon={checkmark} css={{ color: "green" }} />
-              )}
-            </Col>
+            <Tooltip placement="top" title={t("step.2.tooltip")}>
+              <Col>
+                {infoIcon && (
+                  <Icon size={24} icon={info} css={{ color: "#1890FF" }} />
+                )}
+                {warningIcon && (
+                  <Icon size={24} icon={blocked} css={{ color: "red" }} />
+                )}
+                {succesIcon && (
+                  <Icon size={24} icon={checkmark} css={{ color: "green" }} />
+                )}
+              </Col>
+            </Tooltip>
           </Row>
         </Col>
         <Col>
