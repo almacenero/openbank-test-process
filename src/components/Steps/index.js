@@ -1,5 +1,6 @@
 // eslint-disable-next-line
 import React, { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { Steps } from "antd";
 import { StepsContext } from "./../Context/StepsContext";
 //import { Container, Row } from "reactstrap";
@@ -11,8 +12,8 @@ import { jsx } from "@emotion/core";
 }; */
 
 const { Step } = Steps;
-
 const MainSteps = () => {
+  const { t } = useTranslation();
   const { current } = useContext(StepsContext);
   return (
     <Steps
@@ -21,9 +22,9 @@ const MainSteps = () => {
       size="default"
       css={{ height: "100%" }}
     >
-      <Step title="Bienvenid@" />
-      <Step title="Loggin" />
-      <Step title="Finalizado" />
+      <Step title={t("step.1")} />
+      <Step title={t("step.2")} />
+      <Step title={t("step.3")} />
     </Steps>
   );
 };

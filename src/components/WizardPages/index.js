@@ -8,6 +8,7 @@ import key_openbank from "../../assets/img/key_openbank.png";
 import { Row, Col } from "reactstrap";
 import Fade from "react-reveal/Fade";
 import { Switch, Route } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 
@@ -26,11 +27,12 @@ const MainitleStyle = {
 };
 
 const MainWizardPages = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <Row>
         <Col>
-          <div css={titleStyle}>Cuenta Corriente OpenClose</div>
+          <div css={titleStyle}>{t("wizard.title")}</div>
         </Col>
         <Col>
           <Row className="justify-content-end">
@@ -46,7 +48,7 @@ const MainWizardPages = () => {
 
       <Row>
         <Col>
-          <div css={MainitleStyle}>Crea tu password manager</div>
+          <div css={MainitleStyle}>{t("wizard.subtitle")}</div>
         </Col>
       </Row>
       <Fade bottom>
