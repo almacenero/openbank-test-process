@@ -5,6 +5,7 @@ import { Input, Tooltip } from "antd";
 import { StepsContext } from "./../Context/StepsContext";
 import { useTranslation } from "react-i18next";
 import passwordValidator from "./../../helpers/PasswordValidation";
+import StringLengthValidator from "./../../helpers/StringLengthValidator";
 import { Icon } from "react-icons-kit";
 import { info } from "react-icons-kit/icomoon/info";
 import { blocked } from "react-icons-kit/icomoon/blocked";
@@ -27,13 +28,14 @@ const textStyles = {
 const Registry = () => {
   const { handleCurrent, current } = useContext(StepsContext);
   const [password, setPassword] = useState();
-  const [repassword, setRepassword] = useState();
+
   const [infoIcon, setInfoIcon] = useState(true);
   const [warningIcon, setWarningIcon] = useState(false);
   const [succesIcon, setSuccesIcon] = useState(false);
   const [disableInput, setdisableInput] = useState(true);
   const [warningIconRePassword, setWarningIconRePassword] = useState(false);
   const [succesIconRepassword, setSuccesIconRepassword] = useState(false);
+  const [track, setTrack] = useState("");
   const { t } = useTranslation();
   useEffect(() => {
     if (current !== 1) {
@@ -63,7 +65,11 @@ const Registry = () => {
       if (value === password) {
         setWarningIconRePassword(false);
         setSuccesIconRepassword(true);
-        //setRepassword(value);
+      }
+    }
+    if (name === "track") {
+      if (StringLengthValidator(value)) {
+        setTrack(value);
       }
     }
   };
@@ -123,9 +129,14 @@ const Registry = () => {
       <Row css={textStyles}>{t("step.2.verification.text")}</Row>
       <Row css={textStyles}>{t("step.2.verification.recordatory")}</Row>
       <Row>
-        <Input placeholder="Introduce tu pista" />
+        <Input
+          placeholder="Introduce tu pista"
+          onChange={handleChange}
+          name="track"
+          value={track}
+        />
       </Row>
-      <Row className="justify-content-end">0/255</Row>
+      <Row className="justify-content-end">{track.length}/255</Row>
     </div>
   );
 };
