@@ -7,6 +7,7 @@ import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CheckBoxProvider } from "./components/Context/CheckBoxContext";
 import { StepsProvider } from "./components/Context/StepsContext";
+import "./locale";
 
 ReactDOM.render(
   <StepsProvider>

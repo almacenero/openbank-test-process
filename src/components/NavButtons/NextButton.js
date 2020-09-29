@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { Button } from "reactstrap";
 import { CheckBoxContext } from "./../Context/CheckBoxContext";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 
@@ -16,11 +17,12 @@ const linkStyles = {
 };
 
 const NextButton = () => {
+  const { t } = useTranslation();
   const { checked } = useContext(CheckBoxContext);
   return (
     <Link to="/registro" css={linkStyles}>
       <Button css={buttonStyles} hidden={!checked}>
-        Siguiente
+        {t("next.button")}
       </Button>
     </Link>
   );

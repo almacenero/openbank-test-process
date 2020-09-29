@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from "react";
 import { Row, Col } from "reactstrap";
 import { Form, Input } from "antd";
 import { StepsContext } from "./../Context/StepsContext";
+import { useTranslation } from "react-i18next";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 /* const borde = {
@@ -19,6 +20,7 @@ const textStyles = {
 
 const Registry = () => {
   const { handleCurrent, current } = useContext(StepsContext);
+  const { t } = useTranslation();
   useEffect(() => {
     if (current !== 1) {
       handleCurrent(1);
@@ -27,13 +29,11 @@ const Registry = () => {
   return (
     <div>
       <Row css={(firstParraphStyle, textStyles)}>
-        En primer lugar, debes crear una contraseña diferente para sus
-        pertenencias electrónicas. No podrás recuperar tu contraseña, así que
-        recuérdala bien
+        {t("step.2.firtsDescription")}
       </Row>
       <Row css={firstParraphStyle}>
         <Col>
-          <div css={textStyles}>Crea tu contraseña maestra</div>
+          <div css={textStyles}>{t("step.2.password.label")}</div>
           <Form.Item
             name="password"
             rules={[
@@ -51,7 +51,7 @@ const Registry = () => {
           </Form.Item>
         </Col>
         <Col>
-          <div css={textStyles}>Repite tu contraseña maestra</div>
+          <div css={textStyles}>{t("step.2.passwordRetry.label")}</div>
           <Form.Item
             name="password"
             rules={[
@@ -70,13 +70,8 @@ const Registry = () => {
           </Form.Item>
         </Col>
       </Row>
-      <Row css={textStyles}>
-        También puedes crear una pista que te ayude a recordar tu contraseña
-        maestra.
-      </Row>
-      <Row css={textStyles}>
-        Crea tu pista recordar tu contraseña (opcional)
-      </Row>
+      <Row css={textStyles}>{t("step.2.verification.text")}</Row>
+      <Row css={textStyles}>{t("step.2.verification.recordatory")}</Row>
       <Row>
         <Input placeholder="Introduce tu pista" />
       </Row>

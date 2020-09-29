@@ -4,6 +4,7 @@ import { Row, Col, Label, Input } from "reactstrap";
 import head from "./../../assets/img/head.png";
 import security from "./../../assets/img/security.png";
 import { CheckBoxContext } from "./../Context/CheckBoxContext";
+import { useTranslation } from "react-i18next";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 /* 
@@ -34,6 +35,7 @@ const politicsAccept = {
 
 const Welcome = () => {
   const { checked, handleChecked } = useContext(CheckBoxContext);
+  const { t } = useTranslation();
   return (
     <div>
       <Row css={optionStyles}>
@@ -43,8 +45,7 @@ const Welcome = () => {
           </Row>
           <Row className="justify-content-center">
             <Col xs={9} css={parraphDescriptionStyles}>
-              Guarda aqui todas tus contraseñas, datos o cualquier información,
-              olvida las notas de papel y las aplicaiones de papel.
+              {t("step.1.firtsDescription")}
             </Col>
           </Row>
         </Col>
@@ -54,34 +55,30 @@ const Welcome = () => {
           </Row>
           <Row className="justify-content-center">
             <Col xs={9} css={parraphDescriptionStyles}>
-              Guarda aqui todas tus contraseñas, datos o cualquier información,
-              olvida las notas de papel y las aplicaiones de papel.
+              {t("step.1.secondDescription")}
             </Col>
           </Row>
         </Col>
       </Row>
       <Row css={optionStyles}>
         <Col>
-          <div css={titleStyle}>Como funciona</div>
-          En primer lugar, debes crear una contraseña diferente para sus
-          pertenecias electrónicas. No podrás recuperar tu contraseña, así que
-          recuerdala bien.
+          <div css={titleStyle}>{t("step.1.howTo.title")}</div>
+          {t("step.1.howTo.content")}
         </Col>
       </Row>
       <Row css={optionStyles}>
         <Col>
-          <div css={titleStyle}>Qué datos puedes guardar</div>
-          Por ejemplo, el número de tu tarjeta, el PIN y el PUK de tu teléfono
-          móvil, el número de serie de alguno de tus dispositivos o cualquier
-          información que necesites tener en lugar seguro.
+          <div css={titleStyle}>{t("step.1.dataSave.title")}</div>
+          {t("step.1.dataSave.content")}
         </Col>
       </Row>
       <Row css={politicsAccept}>
         <Col>
           <Label check>
             <Input type="checkbox" checked={checked} onChange={handleChecked} />{" "}
-            Tiene mayoría de edad y acepta que tratemos sus datos según la
-            politica de protección de datos?
+            {t(
+              "Tiene mayoría de edad y acepta que tratemos sus datos según la politica de protección de datos?"
+            )}
           </Label>
         </Col>
       </Row>
