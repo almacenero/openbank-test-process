@@ -1,4 +1,5 @@
 {
+  "Lang": "Sprache",
   "step.1": "Herzlich willkommen",
   "step.2": "Registrierung",
   "step.3": "Finalizado",
@@ -16,5 +17,6 @@
   "step.2.password.label": "Erstellen Sie Ihr Master-Passwort",
   "step.2.passwordRetry.label": "Wiederholen Sie Ihr Master-Passwort",
   "step.2.verification.text": "Sie können auch einen Hinweis erstellen, der Ihnen hilft, sich Ihr Hauptkennwort zu merken.",
-  "step.2.verification.recordatory": "Erstellen Sie Ihren Hinweis, um sich Ihr Passwort zu merken (optional)"
+  "step.2.verification.recordatory": "Erstellen Sie Ihren Hinweis, um sich Ihr Passwort zu merken (optional)",
+  "step.2.tooltip": "Das Passwort muss mindestens 8 - maximal 24 Zeichen, mindestens 1 Zahl und einen Großbuchstaben enthalten"
 }

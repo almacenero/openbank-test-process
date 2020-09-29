@@ -76,9 +76,7 @@ const Welcome = () => {
         <Col>
           <Label check>
             <Input type="checkbox" checked={checked} onChange={handleChecked} />{" "}
-            {t(
-              "Tiene mayoría de edad y acepta que tratemos sus datos según la politica de protección de datos?"
-            )}
+            {t("step.1.checkText")}
           </Label>
         </Col>
       </Row>
