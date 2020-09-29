@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Welcome from "./Welcome";
 import Registry from "./Registry";
 import NavButtons from "./../NavButtons/index";
@@ -9,6 +9,7 @@ import { Row, Col, button, Button } from "reactstrap";
 import Fade from "react-reveal/Fade";
 import { Switch, Route } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import ReactCountryFlag from "react-country-flag";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 
@@ -28,18 +29,56 @@ const MainitleStyle = {
 
 const MainWizardPages = () => {
   const { t, i18n } = useTranslation();
+  const [hiddenDE, setHiddenDE] = useState(false);
+  const [hiddenES, setHiddenES] = useState(true);
 
+  const handleChangeLanguaje = (lang) => {
+    if (lang === "ES") {
+      i18n.changeLanguage("es");
+      setHiddenDE(false);
+      setHiddenES(true);
+    }
+    if (lang === "DE") {
+      i18n.changeLanguage("de");
+      setHiddenDE(true);
+      setHiddenES(false);
+    }
+  };
   return (
     <div>
       <Row>
-        <Col>
+        <Col xs={6}>
           <div css={titleStyle}>{t("wizard.title")}</div>
         </Col>
         <Col>
-          <Button onClick={() => i18n.changeLanguage("es")}>Español</Button>
-        </Col>
-        <Col>
-          <Button onClick={() => i18n.changeLanguage("de")}>Aleman</Button>
+          <Row className="justify-content-end">
+            <div css={{ paddingTop: 20, paddingRight: 10 }}>{t("Lang")}:</div>
+            <ReactCountryFlag
+              hidden={hiddenES}
+              onClick={() => handleChangeLanguaje("ES")}
+              className="emojiFlag"
+              countryCode="ES"
+              style={{
+                fontSize: "2em",
+                lineHeight: "2em",
+                cursor: "pointer",
+              }}
+              css={{ fontSize: "2em", lineHeight: "2em" }}
+              aria-label="Alemania"
+            />
+            <ReactCountryFlag
+              hidden={hiddenDE}
+              onClick={() => handleChangeLanguaje("DE")}
+              className="emojiFlag"
+              countryCode="DE"
+              style={{
+                fontSize: "2em",
+                lineHeight: "2em",
+                cursor: "pointer",
+              }}
+              aria-label="Alemania"
+            />
+          </Row>
         </Col>
         <Col>
           <Row className="justify-content-end">
