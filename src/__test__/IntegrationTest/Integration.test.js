@@ -19,7 +19,7 @@ beforeEach(() => {
 it("Should pass all steps", () => {
   fireEvent.click(screen.getByRole("checkbox"));
   expect(screen.queryByText("Siguiente")).toBeVisible();
-  fireEvent.click(screen.getByRole("button"));
+  fireEvent.click(screen.queryByText("Siguiente"));
   expect(
     screen.queryByText(
       "En primer lugar, debes crear una contraseña diferente para sus pertenencias electrónicas. No podrás recuperar tu contraseña, así que recuérdala bien"
