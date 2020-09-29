@@ -1,11 +1,11 @@
 // eslint-disable-next-line
-import React from "react";
+import React, { useEffect } from "react";
 import Welcome from "./Welcome";
 import Registry from "./Registry";
 import NavButtons from "./../NavButtons/index";
 import logo_openbank from "../../assets/img/logo_openbank.png";
 import key_openbank from "../../assets/img/key_openbank.png";
-import { Row, Col } from "reactstrap";
+import { Row, Col, button, Button } from "reactstrap";
 import Fade from "react-reveal/Fade";
 import { Switch, Route } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -27,12 +27,19 @@ const MainitleStyle = {
 };
 
 const MainWizardPages = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
   return (
     <div>
       <Row>
         <Col>
           <div css={titleStyle}>{t("wizard.title")}</div>
+        </Col>
+        <Col>
+          <Button onClick={() => i18n.changeLanguage("es")}>Español</Button>
+        </Col>
+        <Col>
+          <Button onClick={() => i18n.changeLanguage("de")}>Aleman</Button>
         </Col>
         <Col>
           <Row className="justify-content-end">

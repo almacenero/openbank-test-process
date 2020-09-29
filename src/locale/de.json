@@ -1,0 +1,20 @@
+{
+  "step.1": "Herzlich willkommen",
+  "step.2": "Registrierung",
+  "step.3": "Finalizado",
+  "wizard.title": "OpenClose-Girokonto",
+  "wizard.subtitle": "Erstellen Sie Ihren Passwort-Manager",
+  "step.1.firtsDescription": "Speichern Sie hier alle Ihre Passwörter, Daten oder Informationen, vergessen Sie Papiernotizen und Papieranträge.",
+  "step.1.secondDescription": "Erstellen Sie Ihren Hauptschlüssel: Nur Sie können damit auf Ihre Geheimnisse zugreifen.",
+  "step.1.howTo.title": "Wie funktioniert es",
+  "step.1.howTo.content": "Zunächst müssen Sie ein anderes Passwort für Ihre elektronischen Gegenstände erstellen. Sie können Ihr Passwort nicht wiederherstellen. Denken Sie also gut daran.",
+  "step.1.dataSave.title": "Welche Daten können Sie speichern?",
+  "step.1.dataSave.content": "Zum Beispiel die Nummer Ihrer Karte, die PIN und die PUK Ihres Mobiltelefons, die Seriennummer eines Ihrer Geräte oder alle Informationen, die Sie an einem sicheren Ort aufbewahren müssen.",
+  "step.1.checkText": "Sind Sie volljährig und akzeptieren, dass wir Ihre Daten gemäß den Datenschutzbestimmungen behandeln?",
+  "next.button": "Folgen",
+  "step.2.firtsDescription": "Zunächst müssen Sie ein anderes Passwort für Ihre elektronischen Gegenstände erstellen. Sie können Ihr Passwort nicht wiederherstellen. Denken Sie also gut daran",
+  "step.2.password.label": "Erstellen Sie Ihr Master-Passwort",
+  "step.2.passwordRetry.label": "Wiederholen Sie Ihr Master-Passwort",
+  "step.2.verification.text": "Sie können auch einen Hinweis erstellen, der Ihnen hilft, sich Ihr Hauptkennwort zu merken.",
+  "step.2.verification.recordatory": "Erstellen Sie Ihren Hinweis, um sich Ihr Passwort zu merken (optional)"
+}

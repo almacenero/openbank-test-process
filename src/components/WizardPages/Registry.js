@@ -34,40 +34,22 @@ const Registry = () => {
       <Row css={firstParraphStyle}>
         <Col>
           <div css={textStyles}>{t("step.2.password.label")}</div>
-          <Form.Item
+
+          <Input.Password
+            //onChange={handleChange}
             name="password"
-            rules={[
-              {
-                required: true,
-                message: "Please input your password!",
-              },
-            ]}
-          >
-            <Input.Password
-              //onChange={handleChange}
-              name="password"
-              required
-            />
-          </Form.Item>
+            required
+          />
         </Col>
         <Col>
           <div css={textStyles}>{t("step.2.passwordRetry.label")}</div>
-          <Form.Item
+
+          <Input.Password
+            //onChange={handleChange}
             name="password"
-            rules={[
-              {
-                required: true,
-                message: "Please input your password!",
-              },
-            ]}
-          >
-            <Input.Password
-              //onChange={handleChange}
-              name="password"
-              required
-              disabled={true}
-            />
-          </Form.Item>
+            required
+            disabled={true}
+          />
         </Col>
       </Row>
       <Row css={textStyles}>{t("step.2.verification.text")}</Row>
