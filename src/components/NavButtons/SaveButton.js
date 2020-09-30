@@ -3,16 +3,11 @@ import React, { useContext } from "react";
 import { Button } from "reactstrap";
 import { ButtonsContext } from "./../Context/ButtonsContext";
 import { PasswordContext } from "./../Context/PasswordContext";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { submitForm } from "./../../services/api";
-import {
-  useQuery,
-  useMutation,
-  useQueryCache,
-  QueryCache,
-  ReactQueryCacheProvider,
-} from "react-query";
+
+import { useMutation } from "react-query";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 
@@ -28,6 +23,7 @@ const linkStyles = {
 };
 
 const SaveButton = () => {
+  let history = useHistory();
   const [mutate, { status, data, error }] = useMutation(submitForm);
   const { t } = useTranslation();
   const { hiddenSaveButton } = useContext(ButtonsContext);
@@ -41,7 +37,19 @@ const SaveButton = () => {
     //console.log("Respuesta de la api-----", res);
   };
   console.log("comprobando status", status);
-  if (status === "loading") return <div>Loading...</div>;
+
+  console.log("error", error);
+  if (status === "loading") {
+    history.push("/load-api");
+  }
+  /* return (
+      <div css={{ borderStyle: "solid" }}>
+        <Spin />
+      </div>
+    ); */
+  if (status !== "loading" && data) {
+    history.push("/success");
+  }
   return (
     <Link to="/registro" css={linkStyles}>
       <Button

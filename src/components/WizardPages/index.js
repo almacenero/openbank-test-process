@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import Welcome from "./Welcome";
 import Registry from "./Registry";
+import Success from "./Success";
+import LoadApi from "./LoadApi";
 import NavButtons from "./../NavButtons/index";
 import logo_openbank from "../../assets/img/logo_openbank.png";
 import key_openbank from "../../assets/img/key_openbank.png";
@@ -103,7 +105,9 @@ const MainWizardPages = () => {
       <Fade bottom>
         <Switch>
           <Route exact path="/" component={Welcome} />
-          <Route exact path="/registro" component={Registry} />
+          <Route exact path="/registry" component={Registry} />
+          <Route exact path="/success" component={Success} />
+          <Route exact path="/load-api" component={LoadApi} />
         </Switch>
       </Fade>
 

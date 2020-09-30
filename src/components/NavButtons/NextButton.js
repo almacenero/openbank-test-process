@@ -25,7 +25,7 @@ const NextButton = () => {
   const { handleHiddenCancelButton } = useContext(ButtonsContext);
 
   return (
-    <Link to="/registro" css={linkStyles}>
+    <Link to="/registry" css={linkStyles}>
       <Button
         css={buttonStyles}
         hidden={!checked}

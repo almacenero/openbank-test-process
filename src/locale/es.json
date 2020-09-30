@@ -20,5 +20,6 @@
   "step.2.passwordRetry.label": "Repite tu contraseña maestra",
   "step.2.verification.text": "También puedes crear una pista que te ayude a recordar tu contraseña maestra.",
   "step.2.verification.recordatory": "Crea tu pista para recordar tu contraseña (opcional)",
-  "step.2.tooltip": "La contraseña debe contener Min 8 - Max 24 caracteres, al menos 1 número y una mayúscula"
+  "step.2.tooltip": "La contraseña debe contener Min 8 - Max 24 caracteres, al menos 1 número y una mayúscula",
+  "step.3.LoadResponse": "Enviando solicitud..."
 }
