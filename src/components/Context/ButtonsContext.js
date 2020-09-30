@@ -11,16 +11,36 @@ class ButtonsProvider extends React.Component {
   }
 
   handleHiddenCancelButton = () => {
-    const hiddenCancelButton = this.state.hiddenCancelButton;
-    this.setState({ hiddenCancelButton: !hiddenCancelButton });
+    const hidden = false;
+    if (hidden !== this.state.hiddenCancelButton) {
+      this.setState({ hiddenCancelButton: hidden });
+    }
+  };
+  handleResetCancelButton = () => {
+    const hidden = true;
+    if (hidden !== this.state.hiddenCancelButton) {
+      this.setState({ hiddenCancelButton: hidden });
+    }
+  };
+  handleEnabledCancelButton = () => {
+    const hidden = false;
+    if (hidden !== this.state.hiddenCancelButton) {
+      this.setState({ hiddenCancelButton: hidden });
+    }
   };
   handleHiddenSaveButton = () => {
     const hiddenSaveButton = this.state.hiddenSaveButton;
     this.setState({ hiddenSaveButton: !hiddenSaveButton });
   };
+  handleDisableSaveButton = () => {
+    const hidden = true;
+    if (hidden !== this.state.hiddenSaveButton)
+      this.setState({ hiddenSaveButton: hidden });
+  };
   handlePasswordHiddenSaveButton = (bool) => {
-    let hiddenSaveButton = bool;
-    this.setState({ hiddenSaveButton: hiddenSaveButton });
+    if (bool !== this.state.hiddenSaveButton) {
+      this.setState({ hiddenSaveButton: bool });
+    }
   };
   render() {
     return (
@@ -28,9 +48,12 @@ class ButtonsProvider extends React.Component {
         value={{
           hiddenCancelButton: this.state.hiddenCancelButton,
           handleHiddenCancelButton: this.handleHiddenCancelButton,
+          handleEnabledCancelButton: this.handleEnabledCancelButton,
           hiddenSaveButton: this.state.hiddenSaveButton,
           handleHiddenSaveButton: this.handleHiddenSaveButton,
           handlePasswordHiddenSaveButton: this.handlePasswordHiddenSaveButton,
+          handleResetCancelButton: this.handleResetCancelButton,
+          handleDisableSaveButton: this.handleDisableSaveButton,
         }}
       >
         <div>{this.props.children}</div>

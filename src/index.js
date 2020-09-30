@@ -8,16 +8,24 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { CheckBoxProvider } from "./components/Context/CheckBoxContext";
 import { StepsProvider } from "./components/Context/StepsContext";
 import { ButtonsProvider } from "./components/Context/ButtonsContext";
+import { PasswordProvider } from "./components/Context/PasswordContext";
+import { QueryCache, ReactQueryCacheProvider } from "react-query";
 import "./locale";
 
+const queryCache = new QueryCache();
+
 ReactDOM.render(
-  <ButtonsProvider>
-    <StepsProvider>
-      <CheckBoxProvider>
-        <App />
-      </CheckBoxProvider>
-    </StepsProvider>
-  </ButtonsProvider>,
+  <ReactQueryCacheProvider queryCache={queryCache}>
+    <PasswordProvider>
+      <ButtonsProvider>
+        <StepsProvider>
+          <CheckBoxProvider>
+            <App />
+          </CheckBoxProvider>
+        </StepsProvider>
+      </ButtonsProvider>
+    </PasswordProvider>
+  </ReactQueryCacheProvider>,
   document.getElementById("root")
 );
 

@@ -6,20 +6,29 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { CheckBoxProvider } from "./../../components/Context/CheckBoxContext";
 import { StepsProvider } from "./../../components/Context/StepsContext";
 import { ButtonsProvider } from "./../../components/Context/ButtonsContext";
+import { PasswordProvider } from "./../../components/Context/PasswordContext";
+import { QueryCache, ReactQueryCacheProvider } from "react-query";
 
 import "./../../locale";
+
+const queryCache = new QueryCache();
 beforeEach(() => {
   render(
-    <ButtonsProvider>
-      <StepsProvider>
-        <CheckBoxProvider>
-          <App></App>
-        </CheckBoxProvider>
-      </StepsProvider>
-    </ButtonsProvider>
+    <ReactQueryCacheProvider queryCache={queryCache}>
+      <PasswordProvider>
+        <ButtonsProvider>
+          <StepsProvider>
+            <CheckBoxProvider>
+              <App></App>
+            </CheckBoxProvider>
+          </StepsProvider>
+        </ButtonsProvider>
+      </PasswordProvider>
+    </ReactQueryCacheProvider>
   );
 });
-it("Should pass all steps", () => {
+it("Should pass all steps", async () => {
+  const passwordData = "Yasser2020";
   fireEvent.click(screen.getByRole("checkbox"));
   expect(screen.queryByText("Siguiente")).toBeVisible();
   fireEvent.click(screen.queryByText("Siguiente"));
@@ -40,4 +49,14 @@ it("Should pass all steps", () => {
   expect(
     screen.queryByText("Crea tu pista para recordar tu contraseña (opcional)")
   ).toBeInTheDocument();
+  await screen.findByTestId("info");
+
+  fireEvent.change(await screen.findByTestId("password"), {
+    target: { value: passwordData },
+  });
+  await screen.findByTestId("checkmark");
+  fireEvent.change(await screen.findByTestId("repassword"), {
+    target: { value: passwordData },
+  });
+  await screen.findByTestId("repassword-checkmark");
 });

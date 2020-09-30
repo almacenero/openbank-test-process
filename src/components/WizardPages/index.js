@@ -2,10 +2,13 @@
 import React, { useEffect, useState } from "react";
 import Welcome from "./Welcome";
 import Registry from "./Registry";
+import Success from "./Success";
+import ErrorApi from "./ErrorApi";
+import LoadApi from "./LoadApi";
 import NavButtons from "./../NavButtons/index";
 import logo_openbank from "../../assets/img/logo_openbank.png";
 import key_openbank from "../../assets/img/key_openbank.png";
-import { Row, Col, button, Button } from "reactstrap";
+import { Row, Col } from "reactstrap";
 import Fade from "react-reveal/Fade";
 import { Switch, Route } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -54,6 +57,7 @@ const MainWizardPages = () => {
           <Row className="justify-content-end">
             <div css={{ paddingTop: 20, paddingRight: 10 }}>{t("Lang")}:</div>
             <ReactCountryFlag
+              data-testid="Flag-ES"
               hidden={hiddenES}
               onClick={() => handleChangeLanguaje("ES")}
               className="emojiFlag"
@@ -67,6 +71,7 @@ const MainWizardPages = () => {
               aria-label="Alemania"
             />
             <ReactCountryFlag
+              data-testid="Flag-DE"
               hidden={hiddenDE}
               onClick={() => handleChangeLanguaje("DE")}
               className="emojiFlag"
@@ -101,7 +106,10 @@ const MainWizardPages = () => {
       <Fade bottom>
         <Switch>
           <Route exact path="/" component={Welcome} />
-          <Route exact path="/registro" component={Registry} />
+          <Route exact path="/registry" component={Registry} />
+          <Route exact path="/success" component={Success} />
+          <Route exact path="/error-api" component={ErrorApi} />
+          <Route exact path="/load-api" component={LoadApi} />
         </Switch>
       </Fade>
 

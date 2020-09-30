@@ -15,10 +15,14 @@
   "next.button": "Folgen",
   "save.button": "Speichern",
   "cancel.button": "Stornieren",
+  "cancel.button.home": "Start",
   "step.2.firtsDescription": "Zunächst müssen Sie ein anderes Passwort für Ihre elektronischen Gegenstände erstellen. Sie können Ihr Passwort nicht wiederherstellen. Denken Sie also gut daran",
   "step.2.password.label": "Erstellen Sie Ihr Master-Passwort",
   "step.2.passwordRetry.label": "Wiederholen Sie Ihr Master-Passwort",
   "step.2.verification.text": "Sie können auch einen Hinweis erstellen, der Ihnen hilft, sich Ihr Hauptkennwort zu merken.",
   "step.2.verification.recordatory": "Erstellen Sie Ihren Hinweis, um sich Ihr Passwort zu merken (optional)",
-  "step.2.tooltip": "Das Passwort muss mindestens 8 - maximal 24 Zeichen, mindestens 1 Zahl und einen Großbuchstaben enthalten"
+  "step.2.tooltip": "Das Passwort muss mindestens 8 - maximal 24 Zeichen, mindestens 1 Zahl und einen Großbuchstaben enthalten",
+  "step.3.LoadResponse": "Anfrage wird versendet ...",
+  "step.3.Success.Message": "Das war's, rechtzeitig haben Sie Ihr Passwort bereits gespeichert!",
+  "step.3.Success.Error": "Entschuldigung, es scheint ein Problem mit dem Server zu geben. Bitte versuchen Sie es später noch einmal!"
 }
