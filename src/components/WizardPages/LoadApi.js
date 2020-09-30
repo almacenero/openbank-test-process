@@ -14,16 +14,24 @@ const SpinSytles = {
   //background: "rgba(0, 0, 0, 0.05)",
   borderRadius: "4px",
   marginBottom: "20px",
-  padding: "200px 400px",
+  padding: "100px 0px 0px 0px",
   margin: "20px 0",
 };
 const LoadApi = () => {
   const { t } = useTranslation();
   return (
-    <div css={SpinSytles}>
-      <Spin size="large" />
-      <div>{t("step.3.LoadResponse")}</div>
-    </div>
+    <Col>
+      <div css={SpinSytles}>
+        <Spin size="large" />
+      </div>
+
+      <Row
+        className="justify-content-center"
+        css={{ marginTop: 40, color: "#ff0049" }}
+      >
+        {t("step.3.LoadResponse")}
+      </Row>
+    </Col>
   );
 };
 

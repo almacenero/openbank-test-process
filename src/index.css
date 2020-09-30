@@ -28,3 +28,10 @@ code {
 .ant-steps-finish-icon {
   color: white !important;
 }
+
+.ant-spin-dot-item {
+  background-color: #ff0049 !important;
+  margin: 15px !important;
+  width: 30px !important;
+  height: 30px !important;
+}
