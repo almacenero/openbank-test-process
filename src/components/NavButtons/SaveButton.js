@@ -52,6 +52,15 @@ const SaveButton = () => {
     history.push("/success");
     reset();
   }
+
+  if (status !== "loading" && error) {
+    handleCurrent(2);
+    handleStatus("finish");
+    handleDisableSaveButton();
+    handleEnabledCancelButton();
+    history.push("/error-api");
+    reset();
+  }
   return (
     <Link to="/registro" css={linkStyles}>
       <Button

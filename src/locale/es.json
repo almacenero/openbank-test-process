@@ -23,5 +23,6 @@
   "step.2.verification.recordatory": "Crea tu pista para recordar tu contraseña (opcional)",
   "step.2.tooltip": "La contraseña debe contener Min 8 - Max 24 caracteres, al menos 1 número y una mayúscula",
   "step.3.LoadResponse": "Enviando solicitud...",
-  "step.3.Success.Message": "Eso es todo, en hora buena ya tienes guardada tu contraseña!"
+  "step.3.Success.Message": "Eso es todo, en hora buena ya tienes guardada tu contraseña!",
+  "step.3.Success.Error": "Lo sentimos, parece hay un problema con el servidor. Por favor intenta mas tarde !"
 }
