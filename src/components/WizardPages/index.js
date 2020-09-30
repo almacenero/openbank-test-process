@@ -23,10 +23,7 @@ const MainWizardPages = () => {
 
   return (
     <div>
-      <Row
-        className="d-none d-sm-flex"
-        //css={{ borderStyle: "solid" }}
-      >
+      <Row className="d-none d-sm-flex">
         <OpenBankTitle />
         <Languages />
         <OpenBankLogo />
@@ -54,9 +51,7 @@ const MainWizardPages = () => {
           </Fade>
         </Col>
       </Row>
-      <Row css={{ marginBottom: 30, paddingLeft: 20 }}>
-        <NavButtons />
-      </Row>
+      <NavButtons />
     </div>
   );
 };

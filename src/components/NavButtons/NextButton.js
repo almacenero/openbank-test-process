@@ -9,8 +9,6 @@ import { useTranslation } from "react-i18next";
 import { jsx } from "@emotion/core";
 
 const buttonStyles = {
-  marginRight: 10,
-  marginTop: 10,
   backgroundColor: "#ff0049",
   borderColor: "#ff0049",
 };
