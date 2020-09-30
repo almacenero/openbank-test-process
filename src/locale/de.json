@@ -13,6 +13,8 @@
   "step.1.dataSave.content": "Zum Beispiel die Nummer Ihrer Karte, die PIN und die PUK Ihres Mobiltelefons, die Seriennummer eines Ihrer Geräte oder alle Informationen, die Sie an einem sicheren Ort aufbewahren müssen.",
   "step.1.checkText": "Sind Sie volljährig und akzeptieren, dass wir Ihre Daten gemäß den Datenschutzbestimmungen behandeln?",
   "next.button": "Folgen",
+  "save.button": "Speichern",
+  "cancel.button": "Stornieren",
   "step.2.firtsDescription": "Zunächst müssen Sie ein anderes Passwort für Ihre elektronischen Gegenstände erstellen. Sie können Ihr Passwort nicht wiederherstellen. Denken Sie also gut daran",
   "step.2.password.label": "Erstellen Sie Ihr Master-Passwort",
   "step.2.passwordRetry.label": "Wiederholen Sie Ihr Master-Passwort",

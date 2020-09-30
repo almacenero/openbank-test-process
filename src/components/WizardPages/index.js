@@ -97,6 +97,7 @@ const MainWizardPages = () => {
           <div css={MainitleStyle}>{t("wizard.subtitle")}</div>
         </Col>
       </Row>
+
       <Fade bottom>
         <Switch>
           <Route exact path="/" component={Welcome} />
@@ -104,9 +105,7 @@ const MainWizardPages = () => {
         </Switch>
       </Fade>
 
-      <Row>
-        <NavButtons />
-      </Row>
+      <NavButtons />
     </div>
   );
 };

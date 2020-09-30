@@ -2,7 +2,6 @@
 import React, { useContext } from "react";
 import { Button } from "reactstrap";
 import { CheckBoxContext } from "./../Context/CheckBoxContext";
-import { ButtonsContext } from "./../Context/ButtonsContext";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 /** @jsx jsx */
@@ -19,25 +18,16 @@ const linkStyles = {
   textDecoration: "none",
 };
 
-const NextButton = () => {
+const SaveButton = () => {
   const { t } = useTranslation();
-  const { checked, handleChecked } = useContext(CheckBoxContext);
-  const { handleHiddenCancelButton } = useContext(ButtonsContext);
-
+  const { checked } = useContext(CheckBoxContext);
   return (
     <Link to="/registro" css={linkStyles}>
-      <Button
-        css={buttonStyles}
-        hidden={!checked}
-        onClick={() => {
-          handleHiddenCancelButton();
-          handleChecked();
-        }}
-      >
-        {t("next.button")}
+      <Button css={buttonStyles} hidden={!checked}>
+        {t("save.button")}
       </Button>
     </Link>
   );
 };
 
-export default NextButton;
+export default SaveButton;
