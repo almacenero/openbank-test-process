@@ -5,6 +5,7 @@ import "./App.scss";
 import MainSteps from "./components/Steps/index";
 import MainWizardPages from "./components/WizardPages/index";
 import { BrowserRouter as Router } from "react-router-dom";
+//import { ReactQueryDevtools } from "react-query-devtools";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 /* const borde = {
@@ -18,6 +19,7 @@ const containerStyles = {
 const App = () => {
   return (
     <Router>
+      {/* <ReactQueryDevtools initialIsOpen /> */}
       <Container css={containerStyles}>
         <Row>
           <Col css={{ paddingTop: 75 }}>

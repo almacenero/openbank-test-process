@@ -54,6 +54,7 @@ const MainWizardPages = () => {
           <Row className="justify-content-end">
             <div css={{ paddingTop: 20, paddingRight: 10 }}>{t("Lang")}:</div>
             <ReactCountryFlag
+              data-testid="Flag-ES"
               hidden={hiddenES}
               onClick={() => handleChangeLanguaje("ES")}
               className="emojiFlag"
@@ -67,6 +68,7 @@ const MainWizardPages = () => {
               aria-label="Alemania"
             />
             <ReactCountryFlag
+              data-testid="Flag-DE"
               hidden={hiddenDE}
               onClick={() => handleChangeLanguaje("DE")}
               className="emojiFlag"

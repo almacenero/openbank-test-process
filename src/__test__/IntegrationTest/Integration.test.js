@@ -6,17 +6,25 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { CheckBoxProvider } from "./../../components/Context/CheckBoxContext";
 import { StepsProvider } from "./../../components/Context/StepsContext";
 import { ButtonsProvider } from "./../../components/Context/ButtonsContext";
+import { PasswordProvider } from "./../../components/Context/PasswordContext";
+import { QueryCache, ReactQueryCacheProvider } from "react-query";
 
 import "./../../locale";
+
+const queryCache = new QueryCache();
 beforeEach(() => {
   render(
-    <ButtonsProvider>
-      <StepsProvider>
-        <CheckBoxProvider>
-          <App></App>
-        </CheckBoxProvider>
-      </StepsProvider>
-    </ButtonsProvider>
+    <ReactQueryCacheProvider queryCache={queryCache}>
+      <PasswordProvider>
+        <ButtonsProvider>
+          <StepsProvider>
+            <CheckBoxProvider>
+              <App></App>
+            </CheckBoxProvider>
+          </StepsProvider>
+        </ButtonsProvider>
+      </PasswordProvider>
+    </ReactQueryCacheProvider>
   );
 });
 it("Should pass all steps", () => {

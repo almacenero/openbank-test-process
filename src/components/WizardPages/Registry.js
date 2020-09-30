@@ -12,7 +12,7 @@ import { Icon } from "react-icons-kit";
 import { info } from "react-icons-kit/icomoon/info";
 import { blocked } from "react-icons-kit/icomoon/blocked";
 import { checkmark } from "react-icons-kit/icomoon/checkmark";
-import { submitForm } from "./../../services/api";
+
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 /* const borde = {
@@ -87,12 +87,6 @@ const Registry = () => {
     }
   };
 
-  /* const handleApi = (passw, repassw, optionalQuestion) => {
-    console.log(
-      "Respuesta de la api-----",
-      submitForm(passw, repassw, optionalQuestion)
-    );
-  }; */
   return (
     <div>
       <Row css={(firstParraphStyle, textStyles)}>
