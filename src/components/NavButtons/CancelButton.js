@@ -21,8 +21,8 @@ const CancelButton = () => {
   const { t } = useTranslation();
   const {
     hiddenCancelButton,
-    handleHiddenCancelButton,
-    handleHiddenSaveButton,
+    handleResetCancelButton,
+    handlePasswordHiddenSaveButton,
   } = useContext(ButtonsContext);
   const { handleCurrent } = useContext(StepsContext);
   return (
@@ -31,8 +31,8 @@ const CancelButton = () => {
         css={buttonStyles}
         hidden={hiddenCancelButton}
         onClick={() => {
-          handleHiddenCancelButton();
-          handleHiddenSaveButton();
+          handleResetCancelButton();
+          handlePasswordHiddenSaveButton(true);
           handleCurrent(0);
         }}
       >

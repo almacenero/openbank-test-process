@@ -14,6 +14,9 @@ class ButtonsProvider extends React.Component {
     const hiddenCancelButton = this.state.hiddenCancelButton;
     this.setState({ hiddenCancelButton: !hiddenCancelButton });
   };
+  handleResetCancelButton = () => {
+    this.setState({ hiddenCancelButton: true });
+  };
   handleHiddenSaveButton = () => {
     const hiddenSaveButton = this.state.hiddenSaveButton;
     this.setState({ hiddenSaveButton: !hiddenSaveButton });
@@ -31,6 +34,7 @@ class ButtonsProvider extends React.Component {
           hiddenSaveButton: this.state.hiddenSaveButton,
           handleHiddenSaveButton: this.handleHiddenSaveButton,
           handlePasswordHiddenSaveButton: this.handlePasswordHiddenSaveButton,
+          handleResetCancelButton: this.handleResetCancelButton,
         }}
       >
         <div>{this.props.children}</div>
