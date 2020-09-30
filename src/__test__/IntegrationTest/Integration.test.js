@@ -5,15 +5,18 @@ import "@testing-library/jest-dom/extend-expect";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { CheckBoxProvider } from "./../../components/Context/CheckBoxContext";
 import { StepsProvider } from "./../../components/Context/StepsContext";
+import { ButtonsProvider } from "./../../components/Context/ButtonsContext";
 
 import "./../../locale";
 beforeEach(() => {
   render(
-    <StepsProvider>
-      <CheckBoxProvider>
-        <App></App>
-      </CheckBoxProvider>
-    </StepsProvider>
+    <ButtonsProvider>
+      <StepsProvider>
+        <CheckBoxProvider>
+          <App></App>
+        </CheckBoxProvider>
+      </StepsProvider>
+    </ButtonsProvider>
   );
 });
 it("Should pass all steps", () => {

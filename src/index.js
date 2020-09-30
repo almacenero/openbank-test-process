@@ -7,14 +7,17 @@ import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CheckBoxProvider } from "./components/Context/CheckBoxContext";
 import { StepsProvider } from "./components/Context/StepsContext";
+import { ButtonsProvider } from "./components/Context/ButtonsContext";
 import "./locale";
 
 ReactDOM.render(
-  <StepsProvider>
-    <CheckBoxProvider>
-      <App />
-    </CheckBoxProvider>
-  </StepsProvider>,
+  <ButtonsProvider>
+    <StepsProvider>
+      <CheckBoxProvider>
+        <App />
+      </CheckBoxProvider>
+    </StepsProvider>
+  </ButtonsProvider>,
   document.getElementById("root")
 );
 
