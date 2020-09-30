@@ -4,13 +4,11 @@ import { Row, Col, Label, Input } from "reactstrap";
 import head from "./../../assets/img/head.png";
 import security from "./../../assets/img/security.png";
 import { CheckBoxContext } from "./../Context/CheckBoxContext";
+import { ButtonsContext } from "./../Context/ButtonsContext";
+import { StepsContext } from "./../Context/StepsContext";
 import { useTranslation } from "react-i18next";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-/* 
-const borde = {
-  borderStyle: "solid",
-}; */
 
 const titleStyle = {
   fontSize: 20,
@@ -36,6 +34,15 @@ const politicsAccept = {
 const Welcome = () => {
   const { checked, handleChecked } = useContext(CheckBoxContext);
   const { t } = useTranslation();
+  const {
+    handleResetCancelButton,
+    handlePasswordHiddenSaveButton,
+  } = useContext(ButtonsContext);
+  const { handleCurrent, handleStatus } = useContext(StepsContext);
+  handleResetCancelButton();
+  handlePasswordHiddenSaveButton(true);
+  handleCurrent(0);
+  handleStatus("process");
   return (
     <div>
       <Row css={optionStyles}>

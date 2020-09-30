@@ -2,8 +2,7 @@
 import React, { useContext } from "react";
 import { Button } from "reactstrap";
 import { ButtonsContext } from "./../Context/ButtonsContext";
-import { StepsContext } from "./../Context/StepsContext";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
@@ -13,32 +12,22 @@ const buttonStyles = {
   marginTop: 10,
 };
 
-const linkStyles = {
-  textDecoration: "none",
-};
-
 const CancelButton = () => {
+  let history = useHistory();
   const { t } = useTranslation();
-  const {
-    hiddenCancelButton,
-    handleResetCancelButton,
-    handlePasswordHiddenSaveButton,
-  } = useContext(ButtonsContext);
-  const { handleCurrent } = useContext(StepsContext);
+  const { hiddenCancelButton } = useContext(ButtonsContext);
   return (
-    <Link to="/" css={linkStyles}>
-      <Button
-        css={buttonStyles}
-        hidden={hiddenCancelButton}
-        onClick={() => {
-          handleResetCancelButton();
-          handlePasswordHiddenSaveButton(true);
-          handleCurrent(0);
-        }}
-      >
-        {t("cancel.button")}
-      </Button>
-    </Link>
+    <Button
+      css={buttonStyles}
+      hidden={hiddenCancelButton}
+      onClick={() => {
+        history.push("/");
+      }}
+    >
+      {history.location.pathname === "/success"
+        ? t("cancel.button.home")
+        : t("cancel.button")}
+    </Button>
   );
 };
 

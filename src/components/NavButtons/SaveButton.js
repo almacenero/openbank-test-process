@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { Button } from "reactstrap";
 import { ButtonsContext } from "./../Context/ButtonsContext";
 import { PasswordContext } from "./../Context/PasswordContext";
+import { StepsContext } from "./../Context/StepsContext";
 import { Link, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { submitForm } from "./../../services/api";
@@ -24,31 +25,32 @@ const linkStyles = {
 
 const SaveButton = () => {
   let history = useHistory();
-  const [mutate, { status, data, error }] = useMutation(submitForm);
+  const [mutate, { status, data, error, reset }] = useMutation(submitForm);
   const { t } = useTranslation();
-  const { hiddenSaveButton } = useContext(ButtonsContext);
+  const {
+    handleDisableSaveButton,
+    handleEnabledCancelButton,
+    hiddenSaveButton,
+  } = useContext(ButtonsContext);
   const { password, repassword, optionalQuestion } = useContext(
     PasswordContext
   );
-  //mutate({ password, repassword, optionalQuestion });
+  const { handleCurrent, handleStatus } = useContext(StepsContext);
   const handleApi = async (passw, repassw, opQuestion) => {
     mutate({ passw, repassw, opQuestion });
-    //const res = await submitForm(passw, repassw, opQuestion);
-    //console.log("Respuesta de la api-----", res);
   };
-  console.log("comprobando status", status);
 
-  console.log("error", error);
   if (status === "loading") {
     history.push("/load-api");
+    handleDisableSaveButton();
   }
-  /* return (
-      <div css={{ borderStyle: "solid" }}>
-        <Spin />
-      </div>
-    ); */
   if (status !== "loading" && data) {
+    handleCurrent(2);
+    handleStatus("finish");
+    handleDisableSaveButton();
+    handleEnabledCancelButton();
     history.push("/success");
+    reset();
   }
   return (
     <Link to="/registro" css={linkStyles}>

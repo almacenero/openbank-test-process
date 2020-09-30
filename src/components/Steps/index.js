@@ -14,13 +14,14 @@ import { jsx } from "@emotion/core";
 const { Step } = Steps;
 const MainSteps = () => {
   const { t } = useTranslation();
-  const { current } = useContext(StepsContext);
+  const { current, status } = useContext(StepsContext);
   return (
     <Steps
       direction="vertical"
       current={current}
       size="default"
       css={{ height: "100%" }}
+      status={status}
     >
       <Step title={t("step.1")} />
       <Step title={t("step.2")} />

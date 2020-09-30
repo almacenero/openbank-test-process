@@ -1,6 +1,6 @@
 // eslint-disable-next-line
-import React, { useContext } from "react";
-import { Row, Col, Label, Input } from "reactstrap";
+import React from "react";
+import { Row, Col } from "reactstrap";
 import { useTranslation } from "react-i18next";
 import { Spin } from "antd";
 /** @jsx jsx */
@@ -11,7 +11,6 @@ const borde = {
 }; */
 const SpinSytles = {
   textAlign: "center",
-  //background: "rgba(0, 0, 0, 0.05)",
   borderRadius: "4px",
   marginBottom: "20px",
   padding: "100px 0px 0px 0px",

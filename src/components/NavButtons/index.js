@@ -7,10 +7,6 @@ import { Col, Row } from "reactstrap";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 
-const borde = {
-  borderStyle: "solid",
-};
-
 const NavButtons = () => {
   return (
     <Row>

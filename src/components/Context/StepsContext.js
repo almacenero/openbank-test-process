@@ -6,11 +6,17 @@ class StepsProvider extends React.Component {
     super(props);
     this.state = {
       current: 0,
+      status: "process",
     };
   }
 
   handleCurrent = (actualStep) => {
-    this.setState({ current: actualStep });
+    if (actualStep !== this.state.current)
+      this.setState({ current: actualStep });
+  };
+  handleStatus = (actualSatus) => {
+    if (actualSatus !== this.state.status)
+      this.setState({ status: actualSatus });
   };
   render() {
     return (
@@ -18,6 +24,8 @@ class StepsProvider extends React.Component {
         value={{
           current: this.state.current,
           handleCurrent: this.handleCurrent,
+          status: this.state.status,
+          handleStatus: this.handleStatus,
         }}
       >
         <div>{this.props.children}</div>

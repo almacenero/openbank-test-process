@@ -15,6 +15,7 @@
   "next.button": "Folgen",
   "save.button": "Speichern",
   "cancel.button": "Stornieren",
+  "cancel.button.home": "Start",
   "step.2.firtsDescription": "Zunächst müssen Sie ein anderes Passwort für Ihre elektronischen Gegenstände erstellen. Sie können Ihr Passwort nicht wiederherstellen. Denken Sie also gut daran",
   "step.2.password.label": "Erstellen Sie Ihr Master-Passwort",
   "step.2.passwordRetry.label": "Wiederholen Sie Ihr Master-Passwort",
