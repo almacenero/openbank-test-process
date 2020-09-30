@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Row, Col } from "reactstrap";
 import { Input, Tooltip } from "antd";
 import { StepsContext } from "./../Context/StepsContext";
+import { ButtonsContext } from "./../Context/ButtonsContext";
 import { useTranslation } from "react-i18next";
 import passwordValidator from "./../../helpers/PasswordValidation";
 import StringLengthValidator from "./../../helpers/StringLengthValidator";
@@ -27,6 +28,7 @@ const textStyles = {
 
 const Registry = () => {
   const { handleCurrent, current } = useContext(StepsContext);
+  const { handlePasswordHiddenSaveButton } = useContext(ButtonsContext);
   const [password, setPassword] = useState();
 
   const [infoIcon, setInfoIcon] = useState(true);
@@ -62,9 +64,11 @@ const Registry = () => {
     if (name === "repassword") {
       setWarningIconRePassword(true);
       setSuccesIconRepassword(false);
+      handlePasswordHiddenSaveButton(true);
       if (value === password) {
         setWarningIconRePassword(false);
         setSuccesIconRepassword(true);
+        handlePasswordHiddenSaveButton(false);
       }
     }
     if (name === "track") {

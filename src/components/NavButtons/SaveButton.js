@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import React, { useContext } from "react";
 import { Button } from "reactstrap";
-import { CheckBoxContext } from "./../Context/CheckBoxContext";
+import { ButtonsContext } from "./../Context/ButtonsContext";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 /** @jsx jsx */
@@ -20,10 +20,10 @@ const linkStyles = {
 
 const SaveButton = () => {
   const { t } = useTranslation();
-  const { checked } = useContext(CheckBoxContext);
+  const { hiddenSaveButton } = useContext(ButtonsContext);
   return (
     <Link to="/registro" css={linkStyles}>
-      <Button css={buttonStyles} hidden={!checked}>
+      <Button css={buttonStyles} hidden={hiddenSaveButton}>
         {t("save.button")}
       </Button>
     </Link>
