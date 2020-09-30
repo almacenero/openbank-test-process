@@ -20,7 +20,7 @@ const App = () => {
     <Router>
       <Container css={containerStyles}>
         <Row>
-          <Col>
+          <Col css={{ paddingTop: 75 }}>
             <MainSteps />
           </Col>
           <Col xs={10}>
