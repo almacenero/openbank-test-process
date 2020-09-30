@@ -93,10 +93,10 @@ const Registry = () => {
         {t("step.2.firtsDescription")}
       </Row>
       <Row css={firstParraphStyle}>
-        <Col>
+        <Col xs={11} lg={6}>
           <div css={textStyles}>{t("step.2.password.label")}</div>
           <Row>
-            <Col xs={10}>
+            <Col xs={9}>
               <Input.Password
                 onChange={handleChange}
                 name="password"
@@ -134,7 +134,7 @@ const Registry = () => {
             </Tooltip>
           </Row>
         </Col>
-        <Col>
+        <Col xs={11} lg={6}>
           <div css={textStyles}>{t("step.2.passwordRetry.label")}</div>
           <Row>
             <Col xs={9}>

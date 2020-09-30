@@ -17,7 +17,7 @@ beforeEach(() => {
         <ButtonsProvider>
           <StepsProvider>
             <CheckBoxProvider>
-              <App></App>
+              <App></App>a
             </CheckBoxProvider>
           </StepsProvider>
         </ButtonsProvider>
