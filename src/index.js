@@ -8,16 +8,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { CheckBoxProvider } from "./components/Context/CheckBoxContext";
 import { StepsProvider } from "./components/Context/StepsContext";
 import { ButtonsProvider } from "./components/Context/ButtonsContext";
+import { PasswordProvider } from "./components/Context/PasswordContext";
 import "./locale";
 
 ReactDOM.render(
-  <ButtonsProvider>
-    <StepsProvider>
-      <CheckBoxProvider>
-        <App />
-      </CheckBoxProvider>
-    </StepsProvider>
-  </ButtonsProvider>,
+  <PasswordProvider>
+    <ButtonsProvider>
+      <StepsProvider>
+        <CheckBoxProvider>
+          <App />
+        </CheckBoxProvider>
+      </StepsProvider>
+    </ButtonsProvider>
+  </PasswordProvider>,
   document.getElementById("root")
 );
 

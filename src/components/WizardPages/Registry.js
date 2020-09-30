@@ -4,6 +4,7 @@ import { Row, Col } from "reactstrap";
 import { Input, Tooltip } from "antd";
 import { StepsContext } from "./../Context/StepsContext";
 import { ButtonsContext } from "./../Context/ButtonsContext";
+import { PasswordContext } from "./../Context/PasswordContext";
 import { useTranslation } from "react-i18next";
 import passwordValidator from "./../../helpers/PasswordValidation";
 import StringLengthValidator from "./../../helpers/StringLengthValidator";
@@ -11,6 +12,7 @@ import { Icon } from "react-icons-kit";
 import { info } from "react-icons-kit/icomoon/info";
 import { blocked } from "react-icons-kit/icomoon/blocked";
 import { checkmark } from "react-icons-kit/icomoon/checkmark";
+import { submitForm } from "./../../services/api";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 /* const borde = {
@@ -29,6 +31,11 @@ const textStyles = {
 const Registry = () => {
   const { handleCurrent, current } = useContext(StepsContext);
   const { handlePasswordHiddenSaveButton } = useContext(ButtonsContext);
+  const {
+    handlePassword,
+    handleRePassword,
+    handleOptionalQuestion,
+  } = useContext(PasswordContext);
   const [password, setPassword] = useState();
 
   const [infoIcon, setInfoIcon] = useState(true);
@@ -55,8 +62,8 @@ const Registry = () => {
         setWarningIcon(false);
         setSuccesIcon(true);
         setdisableInput(false);
-        console.log("ok");
         setPassword(value);
+        handlePassword(value);
       } else {
         console.log("bad");
       }
@@ -69,14 +76,23 @@ const Registry = () => {
         setWarningIconRePassword(false);
         setSuccesIconRepassword(true);
         handlePasswordHiddenSaveButton(false);
+        handleRePassword(password);
       }
     }
     if (name === "track") {
       if (StringLengthValidator(value)) {
         setTrack(value);
+        handleOptionalQuestion(value);
       }
     }
   };
+
+  /* const handleApi = (passw, repassw, optionalQuestion) => {
+    console.log(
+      "Respuesta de la api-----",
+      submitForm(passw, repassw, optionalQuestion)
+    );
+  }; */
   return (
     <div>
       <Row css={(firstParraphStyle, textStyles)}>
