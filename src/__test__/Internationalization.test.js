@@ -26,10 +26,11 @@ beforeEach(() => {
   );
 });
 it("Should load deutsch language", async () => {
-  const deLanguage = await screen.findByTestId("Flag-DE");
+  const deLanguages = await screen.getAllByTestId("Flag-DE");
 
-  fireEvent.click(deLanguage);
-  expect(screen.queryByText("OpenClose-Girokonto")).toBeInTheDocument();
+  fireEvent.click(deLanguages[0]);
+  const deTexts = screen.queryAllByText("OpenClose-Girokonto");
+  expect(deTexts[0]).toBeInTheDocument();
   expect(
     screen.queryByText("Erstellen Sie Ihren Passwort-Manager")
   ).toBeInTheDocument();
