@@ -5,18 +5,17 @@ describe("App E2E test ", () => {
       .visit("http://localhost:3000")
       .get(".form-check-input")
       .click()
-      .get(".css-1u6hxn1-NextButton")
-      .click();
-    /* .get(".ant-menu > :nth-child(4) > a")
+      .get(".css-1qri4k-NextButton")
       .click()
-      .should("have.text", "Comunícate con nosotros")
-      .get("#mail")
-      .type("yasser@gmail.com")
-      .get("#name")
-      .type("yasser")
-      .get("#detail")
-      .type("Hola esta es una prueba desde mi e2e")
-      .get(".css-1b9oiru-ContactPageForm")
-      .click(); */
+      .get("[data-testid=password]")
+      .type("Yasser2010")
+      .get("[data-testid=repassword]")
+      .type("Yasser2010")
+      .get(":nth-child(5) > .ant-input")
+      .type(
+        "Duis cillum cupidatat consequat cupidatat proident incididunt exercitation velit in reprehenderit cillum ullamco. Labore incididunt pariatur Lorem in nisi. Aliquip voluptate consectetur ut labore ut amet. Aliqua velit exercitation aliqua non anim. Ullamco est nisi eiusmod sit commodo excepteur proident do dolor ut. Lorem ut mollit culpa esse irure velit excepteur deserunt labore commodo."
+      )
+      .get(".css-v8vmtm-SaveButton")
+      .click();
   });
 });

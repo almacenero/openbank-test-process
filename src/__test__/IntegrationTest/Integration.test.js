@@ -27,7 +27,8 @@ beforeEach(() => {
     </ReactQueryCacheProvider>
   );
 });
-it("Should pass all steps", () => {
+it("Should pass all steps", async () => {
+  const passwordData = "Yasser2020";
   fireEvent.click(screen.getByRole("checkbox"));
   expect(screen.queryByText("Siguiente")).toBeVisible();
   fireEvent.click(screen.queryByText("Siguiente"));
@@ -48,4 +49,14 @@ it("Should pass all steps", () => {
   expect(
     screen.queryByText("Crea tu pista para recordar tu contraseña (opcional)")
   ).toBeInTheDocument();
+  await screen.findByTestId("info");
+
+  fireEvent.change(await screen.findByTestId("password"), {
+    target: { value: passwordData },
+  });
+  await screen.findByTestId("checkmark");
+  fireEvent.change(await screen.findByTestId("repassword"), {
+    target: { value: passwordData },
+  });
+  await screen.findByTestId("repassword-checkmark");
 });

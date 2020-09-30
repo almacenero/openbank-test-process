@@ -101,18 +101,34 @@ const Registry = () => {
                 onChange={handleChange}
                 name="password"
                 required
+                data-testid="password"
               />
             </Col>
             <Tooltip placement="top" title={t("step.2.tooltip")}>
               <Col>
                 {infoIcon && (
-                  <Icon size={24} icon={info} css={{ color: "#1890FF" }} />
+                  <Icon
+                    size={24}
+                    icon={info}
+                    css={{ color: "#1890FF" }}
+                    data-testid="info"
+                  />
                 )}
                 {warningIcon && (
-                  <Icon size={24} icon={blocked} css={{ color: "red" }} />
+                  <Icon
+                    size={24}
+                    icon={blocked}
+                    css={{ color: "red" }}
+                    data-testid="blocked"
+                  />
                 )}
                 {succesIcon && (
-                  <Icon size={24} icon={checkmark} css={{ color: "green" }} />
+                  <Icon
+                    size={24}
+                    icon={checkmark}
+                    css={{ color: "green" }}
+                    data-testid="checkmark"
+                  />
                 )}
               </Col>
             </Tooltip>
@@ -127,14 +143,25 @@ const Registry = () => {
                 name="repassword"
                 required
                 disabled={disableInput}
+                data-testid="repassword"
               />
             </Col>
             <Col>
               {warningIconRePassword && (
-                <Icon size={24} icon={blocked} css={{ color: "red" }} />
+                <Icon
+                  size={24}
+                  icon={blocked}
+                  css={{ color: "red" }}
+                  data-testid="repassword-blocked"
+                />
               )}
               {succesIconRepassword && (
-                <Icon size={24} icon={checkmark} css={{ color: "green" }} />
+                <Icon
+                  size={24}
+                  icon={checkmark}
+                  css={{ color: "green" }}
+                  data-testid="repassword-checkmark"
+                />
               )}
             </Col>
           </Row>
