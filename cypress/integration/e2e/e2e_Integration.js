@@ -16,6 +16,8 @@ describe("App E2E test ", () => {
         "Duis cillum cupidatat consequat cupidatat proident incididunt exercitation velit in reprehenderit cillum ullamco. Labore incididunt pariatur Lorem in nisi. Aliquip voluptate consectetur ut labore ut amet. Aliqua velit exercitation aliqua non anim. Ullamco est nisi eiusmod sit commodo excepteur proident do dolor ut. Lorem ut mollit culpa esse irure velit excepteur deserunt labore commodo."
       )
       .get(".css-v8vmtm-SaveButton")
+      .click()
+      .get(".css-g11xb5-CancelButton")
       .click();
   });
 });
