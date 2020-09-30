@@ -19,9 +19,11 @@ const linkStyles = {
 
 const CancelButton = () => {
   const { t } = useTranslation();
-  const { hiddenCancelButton, handleHiddenCancelButton } = useContext(
-    ButtonsContext
-  );
+  const {
+    hiddenCancelButton,
+    handleHiddenCancelButton,
+    handleHiddenSaveButton,
+  } = useContext(ButtonsContext);
   const { handleCurrent } = useContext(StepsContext);
   return (
     <Link to="/" css={linkStyles}>
@@ -30,7 +32,7 @@ const CancelButton = () => {
         hidden={hiddenCancelButton}
         onClick={() => {
           handleHiddenCancelButton();
-
+          handleHiddenSaveButton();
           handleCurrent(0);
         }}
       >
