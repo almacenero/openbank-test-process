@@ -25,7 +25,12 @@ const Success = () => {
   const { t } = useTranslation();
   return (
     <Row css={rowStyle} className="justify-content-center">
-      Success
+      <div css={{ fontFamily: "'Black Ops One', cursive", fontSize: 80 }}>
+        OK
+      </div>
+      <div css={{ paddingTop: 45, paddingLeft: 30 }}>
+        {t("step.3.Success.Message")}
+      </div>
     </Row>
   );
 };
