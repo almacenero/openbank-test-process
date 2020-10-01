@@ -1,15 +1,23 @@
 import React from "react";
-const ButtonsContext = React.createContext();
 
-class ButtonsProvider extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hiddenCancelButton: true,
-      hiddenSaveButton: true,
-    };
-  }
+interface IContextProps {
+  hiddenSaveButton: boolean;
+  hiddenCancelButton: boolean;
+  handleHiddenCancelButton: Function;
+  handleResetCancelButton: Function;
+  handleEnabledCancelButton: Function;
+  handleHiddenSaveButton: Function;
+  handleDisableSaveButton: Function;
+  handlePasswordHiddenSaveButton: Function;
+}
 
+const ButtonsContext = React.createContext({} as IContextProps);
+
+class ButtonsProvider extends React.Component<IContextProps> {
+  state = {
+    hiddenCancelButton: true,
+    hiddenSaveButton: true,
+  };
   handleHiddenCancelButton = () => {
     const hidden = false;
     if (hidden !== this.state.hiddenCancelButton) {
@@ -37,9 +45,9 @@ class ButtonsProvider extends React.Component {
     if (hidden !== this.state.hiddenSaveButton)
       this.setState({ hiddenSaveButton: hidden });
   };
-  handlePasswordHiddenSaveButton = (bool) => {
-    if (bool !== this.state.hiddenSaveButton) {
-      this.setState({ hiddenSaveButton: bool });
+  handlePasswordHiddenSaveButton = (hidden: boolean) => {
+    if (hidden !== this.state.hiddenSaveButton) {
+      this.setState({ hiddenSaveButton: hidden });
     }
   };
   render() {

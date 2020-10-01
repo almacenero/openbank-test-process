@@ -9,11 +9,11 @@ import { jsx } from "@emotion/core";
 
 const NavButtons = () => {
   return (
-    <Row>
-      <Col>
+    <Row css={{ marginBottom: 30 }}>
+      <Col xs={2}>
         <CancelButton />
       </Col>
-      <Col>
+      <Col xs={10}>
         <Row className="justify-content-end">
           <NextButton />
           <SaveButton />

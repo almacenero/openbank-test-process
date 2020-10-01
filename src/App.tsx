@@ -22,7 +22,7 @@ const App = () => {
       {/* <ReactQueryDevtools initialIsOpen /> */}
       <Container css={containerStyles}>
         <Row>
-          <Col css={{ paddingTop: 75 }}>
+          <Col css={{ paddingTop: 75 }} className="d-none d-sm-block">
             <MainSteps />
           </Col>
           <Col xs={10}>

@@ -20,7 +20,10 @@ const LoadApi = () => {
   const { t } = useTranslation();
   return (
     <Col>
-      <div css={SpinSytles}>
+      <div
+        //@ts-ignore
+        css={SpinSytles}
+      >
         <Spin size="large" />
       </div>
 

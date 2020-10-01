@@ -4,7 +4,7 @@ import App from "./../App";
 import "@testing-library/jest-dom/extend-expect";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { CheckBoxProvider } from "./../components/Context/CheckBoxContext";
-import { StepsProvider } from "./../components/Context/StepsContext";
+import { StepsProvider } from "../components/Context/StepsContext.tsx";
 import { ButtonsProvider } from "./../components/Context/ButtonsContext";
 import { PasswordProvider } from "./../components/Context/PasswordContext";
 import { QueryCache, ReactQueryCacheProvider } from "react-query";
@@ -17,7 +17,7 @@ beforeEach(() => {
         <ButtonsProvider>
           <StepsProvider>
             <CheckBoxProvider>
-              <App></App>
+              <App></App>a
             </CheckBoxProvider>
           </StepsProvider>
         </ButtonsProvider>
@@ -27,17 +27,15 @@ beforeEach(() => {
 });
 describe("Should load all the texts on the main screen and the next button should be disabled.", () => {
   it("Should load all steps options ", () => {
-    expect(
-      screen.queryByText("Cuenta Corriente OpenClose")
-    ).toBeInTheDocument();
+    const elements = screen.queryAllByText("Cuenta Corriente OpenClose");
+    expect(elements[0]).toBeInTheDocument();
     expect(screen.queryByText("Bienvenid@")).toBeInTheDocument();
     expect(screen.queryByText("Registro")).toBeInTheDocument();
     expect(screen.queryByText("Finalizado")).toBeInTheDocument();
   });
   it("Should load all text on main page", () => {
-    expect(
-      screen.queryByText("Cuenta Corriente OpenClose")
-    ).toBeInTheDocument();
+    const elements = screen.queryAllByText("Cuenta Corriente OpenClose");
+    expect(elements[0]).toBeInTheDocument();
     expect(screen.queryByText("Crea tu password manager")).toBeInTheDocument();
     expect(
       screen.queryByText(

@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { Steps } from "antd";
-import { StepsContext } from "./../Context/StepsContext";
+import { StepsContext } from "../Context/StepsContext";
 //import { Container, Row } from "reactstrap";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
@@ -21,6 +21,7 @@ const MainSteps = () => {
       current={current}
       size="default"
       css={{ height: "100%" }}
+      //@ts-ignore
       status={status}
     >
       <Step title={t("step.1")} />

@@ -2,12 +2,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Row, Col } from "reactstrap";
 import { Input, Tooltip } from "antd";
-import { StepsContext } from "./../Context/StepsContext";
-import { ButtonsContext } from "./../Context/ButtonsContext";
-import { PasswordContext } from "./../Context/PasswordContext";
+import { StepsContext } from "../Context/StepsContext";
+import { ButtonsContext } from "../Context/ButtonsContext";
+import { PasswordContext } from "../Context/PasswordContext";
 import { useTranslation } from "react-i18next";
-import passwordValidator from "./../../helpers/PasswordValidation";
-import StringLengthValidator from "./../../helpers/StringLengthValidator";
+import passwordValidator from "../../helpers/PasswordValidation";
+import StringLengthValidator from "../../helpers/StringLengthValidator";
 import { Icon } from "react-icons-kit";
 import { info } from "react-icons-kit/icomoon/info";
 import { blocked } from "react-icons-kit/icomoon/blocked";
@@ -36,22 +36,26 @@ const Registry = () => {
     handleRePassword,
     handleOptionalQuestion,
   } = useContext(PasswordContext);
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState<string>();
 
-  const [infoIcon, setInfoIcon] = useState(true);
-  const [warningIcon, setWarningIcon] = useState(false);
-  const [succesIcon, setSuccesIcon] = useState(false);
-  const [disableInput, setdisableInput] = useState(true);
-  const [warningIconRePassword, setWarningIconRePassword] = useState(false);
-  const [succesIconRepassword, setSuccesIconRepassword] = useState(false);
-  const [track, setTrack] = useState("");
+  const [infoIcon, setInfoIcon] = useState<boolean>(true);
+  const [warningIcon, setWarningIcon] = useState<boolean>(false);
+  const [succesIcon, setSuccesIcon] = useState<boolean>(false);
+  const [disableInput, setdisableInput] = useState<boolean>(true);
+  const [warningIconRePassword, setWarningIconRePassword] = useState<boolean>(
+    false
+  );
+  const [succesIconRepassword, setSuccesIconRepassword] = useState<boolean>(
+    false
+  );
+  const [track, setTrack] = useState<string>("");
   const { t } = useTranslation();
   useEffect(() => {
     if (current !== 1) {
       handleCurrent(1);
     }
   });
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { value: any; name: any } }) => {
     const { value, name } = e.target;
     if (name === "password") {
       setInfoIcon(false);
@@ -89,14 +93,17 @@ const Registry = () => {
 
   return (
     <div>
-      <Row css={(firstParraphStyle, textStyles)}>
+      <Row
+        //@ts-ignore
+        css={(firstParraphStyle, textStyles)}
+      >
         {t("step.2.firtsDescription")}
       </Row>
       <Row css={firstParraphStyle}>
-        <Col>
+        <Col xs={11} lg={6}>
           <div css={textStyles}>{t("step.2.password.label")}</div>
           <Row>
-            <Col xs={10}>
+            <Col xs={9}>
               <Input.Password
                 onChange={handleChange}
                 name="password"
@@ -134,7 +141,7 @@ const Registry = () => {
             </Tooltip>
           </Row>
         </Col>
-        <Col>
+        <Col xs={11} lg={6}>
           <div css={textStyles}>{t("step.2.passwordRetry.label")}</div>
           <Row>
             <Col xs={9}>
