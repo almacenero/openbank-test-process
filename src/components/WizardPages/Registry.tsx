@@ -182,6 +182,7 @@ const Registry = () => {
           onChange={handleChange}
           name="track"
           value={track}
+          data-testid="taks"
         />
       </Row>
       <Row className="justify-content-end">{track.length}/255</Row>
