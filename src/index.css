@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -8,4 +8,30 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon {
+  background: #ff0049 !important;
+  border: #ff0049 !important;
+}
+
+.ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after {
+  background-color: #ff0049 !important;
+}
+
+.ant-steps-item-process .ant-steps-item-icon {
+  background: #ff0049 !important;
+  border: #ff0049 !important;
+}
+.ant-steps-finish-icon {
+  color: white !important;
+}
+
+.ant-spin-dot-item {
+  background-color: #ff0049 !important;
+  margin: 15px !important;
+  width: 30px !important;
+  height: 30px !important;
 }
