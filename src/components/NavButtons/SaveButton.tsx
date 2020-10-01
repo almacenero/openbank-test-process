@@ -1,12 +1,12 @@
 // eslint-disable-next-line
 import React, { useContext } from "react";
 import { Button } from "reactstrap";
-import { ButtonsContext } from "./../Context/ButtonsContext";
-import { PasswordContext } from "./../Context/PasswordContext";
-import { StepsContext } from "../Context/StepsContext.tsx";
+import { ButtonsContext } from "../Context/ButtonsContext";
+import { PasswordContext } from "../Context/PasswordContext";
+import { StepsContext } from "../Context/StepsContext";
 import { Link, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { submitForm } from "./../../services/api";
+import { submitForm } from "../../services/api";
 
 import { useMutation } from "react-query";
 /** @jsx jsx */
@@ -34,7 +34,11 @@ const SaveButton = () => {
     PasswordContext
   );
   const { handleCurrent, handleStatus } = useContext(StepsContext);
-  const handleApi = async (passw, repassw, opQuestion) => {
+  const handleApi = async (
+    passw: string,
+    repassw: string,
+    opQuestion: string
+  ) => {
     mutate({ passw, repassw, opQuestion });
   };
 
