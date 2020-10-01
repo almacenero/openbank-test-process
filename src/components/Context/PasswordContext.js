@@ -2,15 +2,11 @@ import React from "react";
 const PasswordContext = React.createContext();
 
 class PasswordProvider extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      password: "",
-      repassword: "",
-      optionalQuestion: "",
-    };
-  }
-
+  state = {
+    password: "",
+    repassword: "",
+    optionalQuestion: "",
+  };
   handlePassword = (password) => {
     this.setState({ password: password });
   };

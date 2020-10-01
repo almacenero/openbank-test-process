@@ -2,13 +2,10 @@ import React from "react";
 const StepsContext = React.createContext();
 
 class StepsProvider extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      current: 0,
-      status: "process",
-    };
-  }
+  state = {
+    current: 0,
+    status: "process",
+  };
 
   handleCurrent = (actualStep) => {
     if (actualStep !== this.state.current)

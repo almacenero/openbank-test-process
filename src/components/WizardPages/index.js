@@ -14,13 +14,10 @@ import NavButtons from "./../NavButtons/index";
 import { Row, Col } from "reactstrap";
 import Fade from "react-reveal/Fade";
 import { Switch, Route } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 
 const MainWizardPages = () => {
-  const { t } = useTranslation();
-
   return (
     <div>
       <Row className="d-none d-sm-flex">

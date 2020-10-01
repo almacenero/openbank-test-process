@@ -18,7 +18,7 @@ const rowStyle = css({
   paddingBottom: 100,
 });
 
-const ErrorApi = () => {
+const ErrorApi: React.FC = () => {
   const { t } = useTranslation();
 
   return (

@@ -18,7 +18,7 @@ const rowStyle = css({
   paddingBottom: 100,
 });
 
-const Success = () => {
+const Success: React.FC = () => {
   const { t } = useTranslation();
 
   return (

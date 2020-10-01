@@ -2,14 +2,10 @@ import React from "react";
 const ButtonsContext = React.createContext();
 
 class ButtonsProvider extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hiddenCancelButton: true,
-      hiddenSaveButton: true,
-    };
-  }
-
+  state = {
+    hiddenCancelButton: true,
+    hiddenSaveButton: true,
+  };
   handleHiddenCancelButton = () => {
     const hidden = false;
     if (hidden !== this.state.hiddenCancelButton) {
