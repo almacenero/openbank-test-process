@@ -1,7 +1,13 @@
 import React from "react";
-const CheckBoxContext = React.createContext();
 
-class CheckBoxProvider extends React.Component {
+interface IContextProps {
+  checked: boolean;
+  handleChecked: Function;
+}
+
+const CheckBoxContext = React.createContext({} as IContextProps);
+
+class CheckBoxProvider extends React.Component<IContextProps> {
   state = {
     checked: false,
   };
