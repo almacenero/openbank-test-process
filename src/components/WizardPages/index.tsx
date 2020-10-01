@@ -6,12 +6,13 @@ import Success from "./Success";
 import Languages from "./Languages";
 import OpenBankLogo from "./OpenBankLogo";
 import OpenBankTitle from "./OpenBankAppTitle";
-import MainHorizontalSteps from "./../Steps/HorizontalSteps";
+import MainHorizontalSteps from "../Steps/HorizontalSteps";
 import WizardTitle from "./WizardTitle";
 import ErrorApi from "./ErrorApi";
 import LoadApi from "./LoadApi";
-import NavButtons from "./../NavButtons/index";
+import NavButtons from "../NavButtons/index";
 import { Row, Col } from "reactstrap";
+//@ts-ignore
 import Fade from "react-reveal/Fade";
 import { Switch, Route } from "react-router-dom";
 /** @jsx jsx */
