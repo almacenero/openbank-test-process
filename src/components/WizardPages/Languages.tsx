@@ -2,17 +2,17 @@
 import React, { useState } from "react";
 import { Row, Col } from "reactstrap";
 import { useTranslation } from "react-i18next";
-
+//@ts-ignore
 import ReactCountryFlag from "react-country-flag";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 
 const Languages = () => {
   const { t, i18n } = useTranslation();
-  const [hiddenDE, setHiddenDE] = useState(false);
-  const [hiddenES, setHiddenES] = useState(true);
+  const [hiddenDE, setHiddenDE] = useState<boolean>(false);
+  const [hiddenES, setHiddenES] = useState<boolean>(true);
 
-  const handleChangeLanguaje = (lang) => {
+  const handleChangeLanguaje = (lang: string) => {
     if (lang === "ES") {
       i18n.changeLanguage("es");
       setHiddenDE(false);

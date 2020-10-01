@@ -5,16 +5,24 @@ import { useTranslation } from "react-i18next";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 
-const MainitleStyle = {
-  fontSize: 22,
+const titleStyle = {
+  fontSize: 25,
   fontWeight: "bold",
 };
-
 const OpenBankTitle = () => {
   const { t } = useTranslation();
   return (
-    <Col>
-      <div css={MainitleStyle}>{t("wizard.subtitle")}</div>
+    <Col
+      xs={12}
+      lg={6}
+      //css={{ borderStyle: "solid" }}
+    >
+      <div
+        //@ts-ignore
+        css={titleStyle}
+      >
+        {t("wizard.title")}
+      </div>
     </Col>
   );
 };
