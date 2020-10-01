@@ -1,17 +1,25 @@
 import React from "react";
-const StepsContext = React.createContext();
 
-class StepsProvider extends React.Component {
+interface IContextProps {
+  current: number;
+  status: string;
+  handleCurrent: Function;
+  handleStatus: Function;
+}
+
+const StepsContext = React.createContext({} as IContextProps);
+
+class StepsProvider extends React.Component<IContextProps> {
   state = {
     current: 0,
     status: "process",
   };
 
-  handleCurrent = (actualStep) => {
+  handleCurrent = (actualStep: number) => {
     if (actualStep !== this.state.current)
       this.setState({ current: actualStep });
   };
-  handleStatus = (actualSatus) => {
+  handleStatus = (actualSatus: string) => {
     if (actualSatus !== this.state.status)
       this.setState({ status: actualSatus });
   };

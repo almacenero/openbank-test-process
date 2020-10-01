@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { Button } from "reactstrap";
 import { ButtonsContext } from "./../Context/ButtonsContext";
 import { PasswordContext } from "./../Context/PasswordContext";
-import { StepsContext } from "./../Context/StepsContext";
+import { StepsContext } from "../Context/StepsContext.tsx";
 import { Link, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { submitForm } from "./../../services/api";

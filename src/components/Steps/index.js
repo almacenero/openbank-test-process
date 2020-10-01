@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { Steps } from "antd";
-import { StepsContext } from "./../Context/StepsContext";
+import { StepsContext } from "../Context/StepsContext.tsx";
 //import { Container, Row } from "reactstrap";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";

@@ -5,7 +5,7 @@ import head from "./../../assets/img/head.png";
 import security from "./../../assets/img/security.png";
 import { CheckBoxContext } from "./../Context/CheckBoxContext";
 import { ButtonsContext } from "./../Context/ButtonsContext";
-import { StepsContext } from "./../Context/StepsContext";
+import { StepsContext } from "../Context/StepsContext.tsx";
 import { useTranslation } from "react-i18next";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";

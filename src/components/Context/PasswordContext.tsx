@@ -1,19 +1,28 @@
 import React from "react";
-const PasswordContext = React.createContext();
+interface IContextProps {
+  password: string;
+  repassword: string;
+  optionalQuestion: string;
+  handlePassword: Function;
+  handleRePassword: Function;
+  handleOptionalQuestion: Function;
+}
 
-class PasswordProvider extends React.Component {
+const PasswordContext = React.createContext({} as IContextProps);
+
+class PasswordProvider extends React.Component<IContextProps> {
   state = {
     password: "",
     repassword: "",
     optionalQuestion: "",
   };
-  handlePassword = (password) => {
+  handlePassword = (password: string) => {
     this.setState({ password: password });
   };
-  handleRePassword = (repassword) => {
+  handleRePassword = (repassword: string) => {
     this.setState({ repassword: repassword });
   };
-  handleOptionalQuestion = (optionalQuestion) => {
+  handleOptionalQuestion = (optionalQuestion: string) => {
     this.setState({ optionalQuestion: optionalQuestion });
   };
 
@@ -23,7 +32,7 @@ class PasswordProvider extends React.Component {
         value={{
           password: this.state.password,
           repassword: this.state.repassword,
-          optionalQuestion: this.optionalQuestion,
+          optionalQuestion: this.state.optionalQuestion,
           handlePassword: this.handlePassword,
           handleRePassword: this.handleRePassword,
           handleOptionalQuestion: this.handleOptionalQuestion,

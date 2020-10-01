@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Row, Col } from "reactstrap";
 import { Input, Tooltip } from "antd";
-import { StepsContext } from "./../Context/StepsContext";
+import { StepsContext } from "../Context/StepsContext.tsx";
 import { ButtonsContext } from "./../Context/ButtonsContext";
 import { PasswordContext } from "./../Context/PasswordContext";
 import { useTranslation } from "react-i18next";
