@@ -59,4 +59,19 @@ it("Should pass all steps", async () => {
     target: { value: passwordData },
   });
   await screen.findByTestId("repassword-checkmark");
+
+  await screen.findByTestId("taks");
+  fireEvent.change(await screen.findByTestId("taks"), {
+    target: {
+      value:
+        "Laborum occaecat aute mollit anim eu et cillum cupidatat occaecat eiusmod aliquip. Ut nulla id tempor qui exercitation quis ea quis. Et ipsum cupidatat cupidatat deserunt non aliqua et voluptate reprehenderit est dolor aliquip. Consectetur duis ad duis do dolore pariatur commodo commodo officia. Mollit nisi non voluptate laborum duis consequat sint. Commodo amet excepteur id consequat sit elit ex exercitation qui nisi velit non ea.",
+    },
+  });
+  screen.queryByText("Guardar");
+  fireEvent.click(screen.queryByText("Guardar"));
+
+  screen.queryByText("Enviando solicitud...");
+  await screen.queryByText(
+    "Eso es todo, en hora buena ya tienes guardada tu contraseña!"
+  );
 });
